@@ -1,0 +1,31 @@
+<header id="site-header" class="card{{ if (not .IsHome) }} l-compact{{ end }}">
+  <nav class="l-container_site">
+    <div class="branding">
+        <h1 class="branding-title">
+          <a href="/" accesskey="h" title="Home (Alt + H)">{{ .Site.Title }}</a>
+        </h1>
+        {{- /* TODO: Add Logo */}}
+      <p class="branding-tagline">{{ .Site.Params.tagline }}</p>
+    </div>
+    <label class="toggle" accesskey="t" title="Change Theme (Alt + T)">
+      <input id="theme-toggle" type="checkbox"></input>
+      <span class="theme-button"></span>
+    </label>
+    <div id="site-nav">
+      <label class="toggle" accesskey="n" title="Open Site Navigation (Alt + N)">
+        <input id="nav-toggle" type="checkbox"></input>
+        <span class="nav-button"></span>
+      </label>
+      <ul class="menu">
+        {{- $currentURL := .RelPermalink }}
+        {{- range .Site.Menus.main }}
+        {{- $active := and (eq $currentURL .URL) }}
+        <li class="menu-item">
+          <a href="{{ .URL }}"{{ if $active }} class="active{{ if $.IsHome}}-mobile{{ end }}"{{ end }}>{{ .Name }}</a>
+        </li>
+        {{- end }}
+      </ul>
+    </div>
+  </nav>
+  {{ if .IsPage }}<progress id="reading-progress" max="100" value="0" ></progress>{{ end }}
+</header>

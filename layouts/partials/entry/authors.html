@@ -1,0 +1,15 @@
+{{- if .Params.authors }}
+<ol class="author-list">
+  {{- range $index, $author := .Params.authors }}
+    <li class="author-item">
+      {{- $authorPage := site.GetPage "authors" (urlize $author) }}
+      {{- $image := (partial "function/author-image" (dict "author" $author "size" "200x200 center")) }}
+      <img src="{{ $image.thumbnail }}" alt="{{ $authorPage.Title }}'s Headshot"  width="50px" height="50px" class="author-headshot">
+      <div class="author-meta">
+        <a href="{{ $authorPage.Permalink }}" class="author-name">{{ $authorPage.Title }}</a>
+        <p class="author-assignment">{{ $authorPage.Params.assignment | default "Guest Author" }}</p>
+      </div>
+    </li>
+  {{ end }}
+</ol>
+{{- end }}

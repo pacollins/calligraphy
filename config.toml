@@ -1,0 +1,28 @@
+[[module.imports]]
+  path = "github.com/necolas/normalize.css"
+
+  [[module.imports.mounts]]
+    source = "normalize.css"
+    target = "assets/css/normalize.css"
+    [[params.library]]
+      name = "normalize"
+      type = "style"
+      path = "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+
+[[module.imports]]
+  path = "github.com/tscanlin/tocbot"
+  [[module.imports.mounts]]
+    source = "dist/tocbot.css"
+    target = "assets/css/tocbot.css"
+    [[params.library]]
+      name = "tocbot"
+      type = "style"
+      path = "https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.css"
+
+  [[module.imports.mounts]]
+    source = "dist/tocbot.min.js"
+    target = "assets/js/tocbot.min.js"
+    [[params.library]]
+      name = "tocbot"
+      type = "script"
+      path = "https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.1/tocbot.min.js"

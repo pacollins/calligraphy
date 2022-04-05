@@ -1,0 +1,16 @@
+<header class="card-header">
+  {{ with .Params.Series }}<a href="/series/{{ . | urlize }}" class="card-banner" data-taxonomy="{{ print "series-" . | urlize }}">{{ . }}</a>{{ end }}
+  <div class="card-meta">
+    <span>{{ with .PublishDate }}<time datetime="{{ . }}">{{ cond (eq (.Format "2006") (now.Format "2006")) (.Format "Jan 2") (.Format "Jan 2 2006") }}</time> · {{ end }}{{ .ReadingTime }} min read</span>
+    {{- if .Params.categories }}
+    <ul class="taxonomy-list_categories">
+    {{- range (.GetTerms "categories") }}
+      <li><a href="{{ .Permalink }}" class="taxonomy-item">{{ .LinkTitle }}</a></li>
+    {{- end }}
+    </ul>
+    {{- end }}
+  </div>
+  <h1 class="card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
+  {{ partial "entry/authors" . }}
+  {{ partialCached "entry/feature" . .Page }}
+</header>

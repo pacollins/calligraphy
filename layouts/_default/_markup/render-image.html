@@ -1,0 +1,44 @@
+<!--
+    Replaces default markup for markdown image.
+    ![text](src)
+-->
+
+{{- $imageFile := slice "jpg" "png" "gif" }}
+{{- $audioFile := slice "mp3" "wav" }}
+{{- $videoFile := slice "mp4" "webm" }}
+{{- $ext := trim (path.Ext .Destination) "." }}
+
+<figure>
+  {{- if in $audioFile $ext }}
+    {{- if eq $ext "mp3" }}
+      {{- $ext = "mpeg" }}
+    {{- end }}
+    <audio preload="none" controls>
+      <source src="{{ .Destination }}" type="audio/{{ $ext }}">
+      Your browser does not support the audio element.
+    </audio>
+  {{- else if in $videoFile $ext }}
+    <video preload="metadata" controls>
+      <source src="{{ .Destination }}" type="video/{{ $ext }}">
+      Your browser does not support the video element.
+    </video>
+  {{- else }}
+    {{- $image := .Destination }}
+    {{- $thumbnail := $image }}
+    {{- if not (in .Destination "http") }}
+      {{- with .Page.Resources.GetMatch .Destination }}
+        {{- $image = . }}
+        {{- if gt $image.Width 700 }}
+          {{- $thumbnail = ($image.Resize "700x").RelPermalink -}}
+        {{- end }}
+      {{- else }}
+        {{- $image = .Destination }}
+        {{- $thumbnail = $image }}
+      {{- end }}
+    {{- end }}
+    <a href="{{ $image }}" target="calligraphy-image">
+      <img loading="lazy" src="{{ $thumbnail }}" alt="{{ .Text | default "A Decorative Image" | markdownify }}">
+    </a>
+  {{- end }}
+  {{ with .Text }}<figcaption class="text-small">{{ . | markdownify  }}</figcaption>{{ end }}
+</figure>

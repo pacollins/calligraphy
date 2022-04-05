@@ -1,0 +1,15 @@
+{{- if .Params.feature }}
+  {{- $thumbnail := .Params.feature }}
+  {{- if not (in .Params.feature "http") }}
+    {{- with .Resources.GetMatch .Params.feature }}
+      {{- $image := . }}
+      {{- $thumbnail = ($image.Fill "1280x400").RelPermalink }}
+    {{- else }}
+      {{- $thumbnail = .Params.feature }}
+    {{- end }}
+  {{- end }}
+  <figure>
+    <a href="{{ .RelPermalink }}"><img src="{{ $thumbnail }}" alt="{{ .Params.featureAlt | default .Params.featureCaption | default "A Decorative Image" }}" width="640px" height="200px"></a>
+    <figcaption>{{ .Params.featureCaption | default .Params.featureAlt }}</figcaption>
+  </figure>
+{{- end }}

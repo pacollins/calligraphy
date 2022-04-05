@@ -1,0 +1,81 @@
+baseURL = "https://hugo-calligraphy.netlify.app/"
+title = "Calligraphy"
+copyright = "Copyright © 2021"
+paginate = 3
+languageCode = "en"
+DefaultContentLanguage = "en"
+theme = "calligraphy"
+enableInlineShortcodes = true
+enableEmoji = true
+
+[params]
+  tagline = "Elegant Writing"
+  cdn = false
+
+[params.meta]
+  baseOGImage = "img/screenshot.jpg"
+  faviconComplete = true
+  faviconSVG = true
+  faviconVersion = ""
+  faviconMSColor = "#00aba9"
+  faviconiOSColor = "#00aba9"
+
+[[menu.main]]
+  identifier = "about"
+  name = "About"
+  url = "/about/"
+  weight = 10
+
+[[menu.main]]
+  identifier = "authors"
+  name = "Authors"
+  url = "/authors/"
+  weight = 15
+
+[[menu.main]]
+  identifier = "series"
+  name = "Series"
+  url = "/series/"
+  weight = 20
+
+[[menu.main]]
+  identifier = "tags"
+  name = "Tags"
+  url = "/tags/"
+  weight = 25
+
+[[menu.main]]
+  identifier = "contact"
+  name = "Contact"
+  url = "/contact/"
+  weight = 30
+
+################################################################################
+######       The block below has additional configuration settings.        #####
+######         Users can edit, but for most it won't be necessary.         #####
+################################################################################
+
+[taxonomies]
+  author = "authors"
+  series = "series"
+  category = "categories"
+  tag = "tags"
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[markup.goldmark.parser.attribute]
+  block = true
+
+[module.hugoVersion]
+  extended = true
+  min = "0.89.0"
+
+[privacy.twitter]
+  enableDNT = true
+
+[privacy.vimeo]
+  enableDNT = true
+
+[privacy.youtube]
+  privacyEnhanced = true

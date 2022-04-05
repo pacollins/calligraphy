@@ -1,0 +1,20 @@
+<!--
+    This function allows for a custom escape character as a hack for Emoji in
+    code blocks.
+    Syntax: {? escapedCharacters }
+    Issue:
+        https://github.com/gohugoio/hugo/issues/4978
+    Solution:
+        https://github.com/dillonzq/LoveIt/blob/f787a4e5ad4edf60467658d10c286248dc5027a6/layouts/partials/function/escape.html
+        https://github.com/dillonzq/LoveIt/blob/f787a4e5ad4edf60467658d10c286248dc5027a6/layouts/partials/function/content.html
+-->
+
+{{- $content := .Content -}}
+
+{{- /* Escape character */ -}}
+{{- /* {?X} -> X */ -}}
+{{- $REin := `\{\?(.)\}` -}}
+{{- $REout := `$1` -}}
+{{- $content = $content | replaceRE $REin $REout -}}
+
+{{- return ($content | safeHTML) -}}

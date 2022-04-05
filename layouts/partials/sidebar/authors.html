@@ -1,0 +1,19 @@
+<aside class="l-container_left sidebar">
+  {{- range .Params.authors }}
+    <article class="card_author headshot-small">
+      {{- $authorPage := site.GetPage "authors" (urlize .) }}
+      {{- $guestPage := site.GetPage "authors" "guest-author" }}
+      {{- $image := (partial "function/author-image" (dict "author" . "size" "200x200 center")) }}
+      <header class="card-header">
+        <figure>
+          <a href="{{ $authorPage.Permalink }}"><img src="{{ $image.thumbnail }}" alt="{{ $authorPage.Title }}'s Headshot" width="100px" height="100px" class="author-headshot"></a>
+        </figure>
+        <h1 class="card-title"><a href="{{ $authorPage.Permalink }}">{{ $authorPage.Title }}</a></h1>
+        <span class="card-subtitle">{{ $authorPage.Params.assignment | default "Guest Author" }}</span>
+      </header>
+      <section class="card-content">
+        {{ $authorPage.Summary | default ($guestPage.Summary) }}
+      </section>
+    </article>
+  {{ end }}
+</aside>

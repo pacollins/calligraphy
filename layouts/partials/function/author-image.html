@@ -1,0 +1,19 @@
+{{ $author := .author }}
+{{ $size := .size }}
+{{- $authorPage := site.GetPage "authors" (urlize $author) }}
+{{- $guestPage := site.GetPage "authors" "guest-author" }}
+{{- $thumbPage := $authorPage }}
+{{- $thumbnail := $authorPage.Params.photo }}
+{{- $image := $thumbnail }}
+{{- if (not $thumbnail) }}
+  {{- $thumbPage = $guestPage }}
+  {{- $thumbnail = $guestPage.Params.photo }}
+{{- end }}
+{{- if not (in $thumbnail "http") }}
+  {{- with $thumbPage.Resources.GetMatch $thumbnail }}
+    {{- $image = . }}
+    {{- $thumbnail = ($image.Fill $size).RelPermalink }}
+  {{- end }}
+{{- end }}
+
+{{ return (dict "src" $image "thumbnail" $thumbnail) }}

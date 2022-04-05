@@ -1,0 +1,26 @@
+{{- define "main" }}
+<section class="l-container_content">
+  {{- range .Paginator.Pages }}
+  <article class="card_author headshot-small">
+    {{- $authorPage := site.GetPage "authors" (urlize .Title) }}
+    {{- $image := (partial "function/author-image" (dict "author" .Title "size" "200x200 center")) }}
+    <header class="card-header">
+      <figure>
+        <a href="{{ .Permalink }}"><img src="{{ $image.thumbnail }}" alt="{{ .Title }}'s Headshot" width="100px" height="100px" class="author-headshot"></a>
+      </figure>
+      <div class="author-meta">
+        <h1 class="card-title"><a href="{{ .Permalink }}">{{ .Title }}</a></h1>
+        <span class="card-subtitle">{{ .Params.assignment | default "Guest Author" }}</span>
+      </div>
+    </header>
+    <section class="card-content">
+      {{ .Summary | truncate 350 "..." }}
+    </section>
+  </article>
+  {{- end }}
+</section>
+{{- end }}
+
+{{- define "pagination" }}
+  {{ partial "pagination" . }}
+{{- end }}

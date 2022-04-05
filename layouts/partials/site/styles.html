@@ -1,0 +1,18 @@
+{{- $main := resources.Get "scss/main.scss" | resources.ExecuteAsTemplate "scss/main.scss" . | toCSS }}
+{{- if .Site.Params.cdn }}
+{{- range .Site.Params.Library }}
+{{- if eq .type "style" }}
+<link rel="stylesheet" href="{{ .path }}">
+{{- end }}
+{{- end }}
+{{- else }}
+{{- $libraries := slice }}
+{{- range .Site.Params.library }}
+{{- if eq .type "style" }}
+{{- $libraries = $libraries | append (resources.Get (print "css/" .name ".css")) }}
+{{- end }}
+{{- end }}
+{{- $main = $libraries | append $main | resources.Concat "css/bundle.css" }}
+{{- end }}
+{{- $styles := $main | minify | fingerprint -}}
+<link rel="stylesheet" href="{{ $styles.RelPermalink }}" crossorigin="anonymous" integrity="{{ $styles.Data.Integrity }}">

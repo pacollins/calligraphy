@@ -1,0 +1,23 @@
+<footer id="site-footer">
+  {{- /* Please don't remove this attribution as a "Thank You" to the theme maintainers. */}}
+  <p>{{ .Site.Copyright }} | Powered by <a href="https://gohugo.io/">Hugo</a> and <a href="https://github.com/pacollins/calligraphy">Calligraphy</a></p>
+</footer>
+
+{{- $main := resources.Match "js/main/*.js" | resources.Concat "js/main.js" }}
+{{- if .Site.Params.cdn }}
+{{- range .Site.Params.Library }}
+{{- if and (eq .type "script") .global }}
+<link rel="stylesheet" href="{{ .path }}">
+{{- end }}
+{{- end }}
+{{- else }}
+{{ $libraries := slice }}
+{{- range .Site.Params.library }}
+{{- if and (eq .type "script") .global }}
+{{ $libraries = $libraries | append (resources.Get (print "js/" .name ".js")) }}
+{{- end }}
+{{- end }}
+{{- $main = $libraries | append $main | resources.Concat "js/bundle.js" }}
+{{- end }}
+{{- $scripts := $main | minify | fingerprint -}}
+<script type="text/javascript" src="{{ $scripts.RelPermalink }}" crossorigin="anonymous" integrity="{{ $scripts.Data.Integrity }}"></script>

@@ -1,0 +1,14 @@
+[build]
+  base = "exampleSite"
+  publish = "public"
+  command = "hugo --gc --themesDir ../.."
+
+[context.production.environment]
+  HUGO_THEME = "repo"
+  HUGO_ENV = "production"
+
+[context.deploy-preview]
+  command = "hugo --gc --buildFuture --themesDir ../.."
+
+[context.branch-deploy]
+  command = "hugo --gc --buildFuture --themesDir ../.."

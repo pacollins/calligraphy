@@ -1,0 +1,39 @@
+.card {
+  @extend %border-float;
+  background-color: var(--background-color-card);
+  border-radius: var(--border-radius-large);
+  height: fit-content;
+  margin-top: 1rem;
+  padding: 1rem;
+  &-banner {
+    background-color: var(--primary);
+    box-shadow: 3px 3px var(--color);
+    color: var(--primary-contrast);
+    margin-left: -2rem;
+    padding: 0 1em;
+  }
+  &-meta {
+    color: var(--color-alt);
+    display: flex;
+    font-size: .85rem;
+    justify-content: space-between;
+    margin-top: .85rem;
+  }
+  &-markers {
+    display: inline-flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  &-title {
+    margin: 0;
+    a {
+      @extend %underline-base;
+      @extend %underline-transparent;
+      background-position: 0 90%, 100% 90%, 0 90%;
+    }
+  }
+  &-subtitle {
+    color: var(--color-alt);
+  }
+}

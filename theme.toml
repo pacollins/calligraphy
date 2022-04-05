@@ -1,0 +1,21 @@
+name = "Calligraphy"
+license = "MIT"
+licenselink = "https://github.com/pacollins/calligraphy/blob/master/LICENSE"
+description = "Inspired by its namesake, Calligraphy aims to provide an elegantly simple canvas for high readability."
+homepage = "https://github.com/pacollins/calligraphy"
+demosite = "http://hugo-calligraphy.netlify.app/"
+tags = [
+  "blog",
+  "dark",
+  "light",
+  "minimal",
+  "responsive",
+  "personal",
+  "portfolio",
+  "news"
+]
+min_version = "0.89.1 extended"
+
+[author]
+  name = "Patrick Collins"
+  homepage = "https://pacollins.com/"

@@ -1,0 +1,35 @@
+.taxonomy {
+  &-list {
+    @extend .card-meta;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: unset;
+    line-height: 1.65;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    &_tags {
+      @extend .taxonomy-list;
+      .taxonomy-item::before {
+        content: "#";
+      }
+    }
+    &_categories {
+      @extend .taxonomy-list;
+      .taxonomy-item::before {
+        content: "⧉";
+        vertical-align: middle;
+      }
+    }
+  }
+  &-item {
+    border-radius: var(--border-radius-small);
+    padding: 0 .5rem;
+    transition: color $transition-base,
+                background-color $transition-base;
+    &:hover {
+      background-color: var(--color);
+      color: var(--background-color-card);
+    }
+  }
+}

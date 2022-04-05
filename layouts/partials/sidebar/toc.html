@@ -1,0 +1,25 @@
+{{- if and (.TableOfContents) (ne .TableOfContents "<nav id=\"TableOfContents\"></nav>") }}
+<aside class="l-container_right sidebar card toc">
+  {{- if .Site.Params.cdn }}
+    {{- range .Site.Params.Library }}
+      {{- if and (eq .type "script") (eq .name "tocbot") }}
+        <script type="text/javascript" src="{{ .path }}"></script>
+      {{- end }}
+    {{- end }}
+  {{- else }}
+    {{- $tocbot := resources.Get "js/tocbot.min.js" }}
+    <script type="text/javascript" src="{{ $tocbot.RelPermalink }}"></script>
+  {{- end }}
+  <script>
+    tocbot.init({
+      tocSelector: '.l-container_right',
+      contentSelector: '.card-content',
+      headingSelector: 'h2, h3',
+      hasInnerContainers: true,
+      collapseDepth: 0,
+      headingsOffset: 80,
+      scrollSmoothOffset: -80
+    });
+  </script>
+</aside>
+{{- end }}

@@ -1,0 +1,27 @@
+{{/*
+  Shortcode: contact-form
+  Description: Insert basic contact form.
+  Author: pacollins
+  Type: Positional or Named
+  Returns: HTML Contact Form
+  Usage: {{ contact-form service="service" }} or {{ contact-form "service" }}
+  Parameters: 1 Required
+
+  position 0
+    name: service
+    values:
+      - netlify: will enable form for netlify forms
+*/}}
+
+{{- $service := (.Get "service") | default (.Get 0) }}
+{{- if eq $service "netlify" }}
+<form name="contact" method="POST" action="thank-you" data-netlify-recaptcha="true" data-netlify="true">
+  <input type="text" name="name" placeholder="Name" required autofocus>
+  <input type="email" name="_replyto" placeholder="Email" required>
+  <input type="text" name="_subject" placeholder="Subject" required>
+  <textarea name="message" placeholder="Body" required></textarea>
+  <div data-netlify-recaptcha="true"></div>
+  <button type="submit">Submit</button>
+  <button type="reset">Reset</button>
+</form>
+{{- end }}

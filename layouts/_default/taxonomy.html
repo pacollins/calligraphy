@@ -1,0 +1,11 @@
+{{- define "main" }}
+<article class="l-container_content card">
+  <h1 class="card-title">{{ .Page.Title }}</h1>
+  <ul>
+    {{- $term := .Data.Singular }}
+    {{- range .Data.Terms.ByCount }}
+    <li><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a> <sup>{{ .Count }}</sup></li>
+    {{- end }}
+  </ul>
+</article>
+{{- end }}

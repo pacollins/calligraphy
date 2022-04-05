@@ -1,0 +1,25 @@
+{{- define "main" }}
+<article class="l-container_content card_author">
+  {{- $authorPage := site.GetPage "authors" (urlize .Title) }}
+  {{- $image := (partial "function/author-image" (dict "author" .Title "size" "400x400 center")) }}
+  <header class="card-header">
+    <figure>
+      <img src="{{ $image.thumbnail }}" alt="{{ .Title }}'s Headshot" width="200px" height="200px" class="author-headshot">
+      {{ with .Params.caption }}<figcaption class="text-small">{{ . | markdownify  }}</figcaption>{{ end }}
+    </figure>
+    <h1 class="card-title">{{ .Title }}</h1>
+    {{ with .Params.assignment }}<span class="card-subtitle">{{ . }}</span>{{ end }}
+  </header>
+  <section id="card-content">
+    {{ partial "function/content.html" . }}
+  </section>
+  <footer>
+    <h2>Articles</h2>
+    <ul>
+      {{- range .Data.Pages }}
+      <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+      {{- end }}
+    </ul>
+  </footer>
+</article>
+{{- end }}
