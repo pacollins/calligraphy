@@ -37,8 +37,8 @@
       {{- end }}
     {{- end }}
     <a href="{{ $image }}" target="calligraphy-image">
-      <img loading="lazy" src="{{ $thumbnail }}" alt="{{ .Text | default "A Decorative Image" | markdownify }}">
+      <img loading="lazy" src="{{ $thumbnail }}" alt="{{ .Text | default "A Decorative Image" }}">
     </a>
   {{- end }}
-  {{ with .Text }}<figcaption class="text-small">{{ . | markdownify  }}</figcaption>{{ end }}
+  {{ with .Text }}<figcaption class="text-small">{{ . | safeHTML }}</figcaption>{{ end }}
 </figure>
