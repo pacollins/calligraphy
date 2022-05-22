@@ -7,60 +7,50 @@ body {
 }
 
 .l-container {
-  margin-left: 1rem;
-  margin-right: 1rem;
   &_site {
-    @extend .l-container;
-    max-width: 120ch;
-    width: 100%;
+    max-width: $width-site;
   }
   &_content {
-    @extend .l-container;
     grid-area: content;
+    min-width: 0;
   }
   &_left {
-    @extend .l-container;
-    display: none;
     grid-area: left;
-    @include break(full-container) {
-      display: block;
+    @include break(full-container, max) {
+      display: none;
     }
   }
   &_right {
-    @extend .l-container;
-    display: none;
     grid-area: right;
-    @include break(full-container) {
-      display: block;
+    @include break(main-container, max) {
+      display: none;
     }
   }
   &_footer {
-    @extend .l-container;
-    display: flex;
     grid-area: footer;
-    padding: 1rem 0;
+    margin: 1rem auto;
+    width: 100%;
   }
 }
 
 #site-header {
-  border-radius: unset;
-  margin: unset;
+  @extend %border-float;
+  background-color: var(--background-color-card);
   padding: 0 1rem;
   position: sticky;
   top: 0;
-  z-index: 2;
+  z-index: 1;
   a {
     @extend %underline-base;
     @extend %underline-transparent;
     &:hover, &:focus, &.active {
-      @extend %underline-accent;
-      color: var(--accent);
+      @extend %underline-color-accent;
+      color: var(--color-accent);
     }
   }
   .l-container_site {
     align-items: center;
     display: flex;
-    justify-content: flex-end;
     margin: .5rem auto;
     @include break(main-container) {
       align-items: flex-end;
@@ -83,7 +73,7 @@ body {
     &-title {
       font-size: clamp(1.2rem, 4vw, 2.074rem);
       font-weight: 900;
-      margin: unset;
+      margin: unset; /* Reset h1 */
       a {
         @extend %underline-base;
         @extend %underline-transparent;
@@ -91,10 +81,11 @@ body {
       }
     }
     &-tagline {
-      display: none;
+      @include break(main-container, max) {
+        display: none;
+      }
       @include break(main-container) {
         color: var(--color);
-        display: block;
         font-family: $font-header;
         font-size: clamp(.8rem, 4vw, 1.2rem);
         font-weight: 200;
@@ -180,18 +171,15 @@ body {
 }
 
 #site-nav {
-  align-content: center;
   display: flex;
-  margin: unset;
   @include break(main-container) {
     .toggle {
       display: none;
     }
   }
   .menu {
-    list-style: none;
-    margin: unset;
-    padding: unset;
+    list-style: none; /* base */
+    margin: unset; /* base */
     @include break(main-container, max) {
       background-color: var(--color);
       color: var(--background-color);
@@ -247,24 +235,25 @@ body {
 
 #site-main {
   background-color: var(--background-color);
+  display: grid;
   flex-grow: 1;
-  margin: 0 auto;
   max-width: 100%;
+  grid-template-areas:  "l content r"
+                        "l footer r";
+  grid-template-columns: minmax(1.25rem, 1fr) minmax(auto, $width-content) minmax(1.25rem, 1fr);
   @include break(main-container) {
-    display: grid;
-    grid-template-areas: "left"
-                         "content"
-                         "right"
-                         "footer";
-    grid-template-columns: 36rem;
-    grid-template-rows: auto 1fr;
+    column-gap: 2rem;
+    grid-template-areas:  "l content right r"
+                          "l content . r"
+                          "l footer . r";
+    grid-template-columns: minmax(1.25rem, 1fr) minmax(auto, $width-content) auto minmax(1.25rem, 1fr);
+    grid-template-row: auto 1fr auto;
   }
   @include break(full-container) {
-    column-gap: 2rem;
-    grid-template-areas: "left content right"
-                         ". content ."
-                         ". footer .";
-    grid-template-columns: 16rem 36rem 16rem;
+    grid-template-areas:  "l left content right r"
+                          "l . content . r"
+                          "l . footer . r";
+    grid-template-columns: minmax(1.25rem, 1fr) auto minmax(auto, $width-content) auto minmax(1.25rem, 1fr);
   }
 }
 
