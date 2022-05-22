@@ -13,10 +13,10 @@ a.toc-link {
     width: 3px;
   }
   &.is-active-link {
-    color: var(--accent);
+    color: var(--color-accent);
     font-weight: 400;
     &::before {
-      background-color: var(--accent);
+      background-color: var(--color-accent);
     }
   }
 }

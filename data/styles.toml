@@ -1,0 +1,45 @@
+# widths
+width-site = "65rem"
+width-content = "33rem"
+width-aside = "17rem"
+
+# fonts
+font-header = "'Playfair Display', serif"
+font-body = "'Source Sans Pro', sans-serif"
+
+# transitions
+transition-base = ".3s ease-in-out"
+
+# borders
+border-radius-small = "5px"
+border-radius-large = "10px"
+
+# colors
+color-accent = "hsl(174, 60%, 51%)"
+color-accent-contrast = "hsl(0, 0%, 95%)"
+color-primary = "hsl(203, 82%, 41%)"
+color-primary-contrast = "hsl(0, 0%, 95%)"
+color-block = "hsl(0, 0%, 100%)"
+color-button = "hsl(220, 16%, 22%)"
+color-button-contrast = "hsl(0, 0%, 100%)"
+
+light-color = "hsl(220, 16%, 22%)"
+light-background-color = "hsl(0, 0%, 93%)"
+light-background-color-card = "hsl(0, 0%, 98%)"
+light-color-alt = "hsl(236, 18%, 48%)"
+light-background-color-alt = "hsl(0, 0%, 86%)"
+light-background-color-block = "hsl(220, 16%, 22%)"
+light-background-color-block-alt = "hsl(220, 16%, 88%)"
+light-color-link = "hsl(203, 82%, 41%)"
+light-border-color = "hsl(220, 16%, 36%)"
+
+dark-color = "hsl(0, 0%, 95%)"
+dark-background-color = "hsl(220, 16%, 16%)"
+dark-background-color-card = "hsl(220, 16%, 22%)"
+dark-color-alt = "hsl(236, 18%, 68%)"
+dark-background-color-alt = "hsl(220, 16%, 28%)"
+dark-background-color-block = "hsl(220, 16%, 16%)"
+dark-background-color-block-alt = "hsl(220, 16%, 28%)"
+dark-color-link = "hsl(203, 82%, 65%)"
+dark-border-color = "hsl(219, 28%, 88%)"
+dark-image-filter = "grayscale(35%)"

@@ -10,13 +10,13 @@ html {
   }
   --border-radius-small: #{$border-radius-small};
   --border-radius-large: #{$border-radius-large};
-  --accent: #{$accent};
-  --accent-contrast: #{$accent-contrast};
-  --primary: #{$primary};
-  --primary-contrast: #{$primary-contrast};
+  --color-accent: #{$color-accent};
+  --color-accent-contrast: #{$color-accent-contrast};
+  --color-primary: #{$color-primary};
+  --color-primary-contrast: #{$color-primary-contrast};
   --color-block: #{$color-block};
   --color-button: #{$color-button};
-  --background-color-button: #{$background-color-button};
+  --color-button-contrast: #{$color-button-contrast};
   &[data-theme="light"] {
     --color: #{$light-color};
     --background-color: #{$light-background-color};
@@ -103,7 +103,7 @@ p {
       text-shadow: none;
       transition: background-color $transition-base;
       &:hover {
-        background-color: var(--accent);
+        background-color: var(--color-accent);
       }
     }
   }
@@ -166,7 +166,7 @@ pre, table {
 }
 
 blockquote {
-  border-left: 3px solid var(--accent);
+  border-left: 3px solid var(--color-accent);
   font-style: italic;
   margin: 0;
   padding-left: 1rem;
@@ -246,17 +246,17 @@ progress {
   appearance: none;
   background-color: transparent;
   border: none;
-  color: var(--accent);
+  color: var(--color-accent);
   height: 5px;
   width: 100%;
   &::-webkit-progress-bar {
     background-color: transparent;
   }
   &::-webkit-progress-value {
-    background-color: var(--accent);
+    background-color: var(--color-accent);
   }
   &::-moz-progress-bar {
-    background-color: var(--accent);
+    background-color: var(--color-accent);
   }
 }
 
@@ -269,7 +269,7 @@ a {
               color $transition-base;
   &:hover, &:focus {
     background-size: 0 1px, 0 1px, 100% 1px;
-    color: var(--accent);
+    color: var(--color-accent);
   }
 }
 
@@ -288,9 +288,9 @@ code {
   color: var(--color-block);
   padding: .25rem .5rem;
   &[data-lang]::before {
-    background-color: var(--primary);
+    background-color: var(--color-primary);
     box-shadow: 3px 3px var(--color-block);
-    color: var(--primary-contrast);
+    color: var(--color-primary-contrast);
     content: attr(data-lang);
     display: block;
     font-size: .75em;
@@ -406,9 +406,9 @@ input, select, textarea  {
               box-shadow $transition-base;
   width: 100%;
   &:hover, &:focus {
-    border-color: var(--accent);
+    border-color: var(--color-accent);
     box-shadow: 0 0 0 2px var(--background-color-card),
-                0 0 0 4px var(--accent);
+                0 0 0 4px var(--color-accent);
     outline: none;
   }
   &:disabled {
@@ -431,7 +431,7 @@ input {
     margin: 0 1rem;
     width: 16px;
     &:checked, &:hover, &:focus, &:focus-visible {
-      border-color: var(--accent);
+      border-color: var(--color-accent);
     }
     &:disabled {
       background-color: var(--background-color-alt);
@@ -445,22 +445,22 @@ input {
   &[type="checkbox"] {
     border-radius: 33%;
     &:checked {
-      background-image: linear-gradient( -45deg, transparent 65%, var(--accent) 0),
-                        linear-gradient( 45deg, transparent 75%, var(--accent) 0),
-                        linear-gradient( -45deg, var(--accent) 40%, transparent 0),
-                        linear-gradient( 45deg, var(--accent) 30%, var(--accent-contrast) 0, var(--accent-contrast) 40%, transparent 0),
-                        linear-gradient( -45deg, var(--accent-contrast) 50%, var(--accent) 0);
+      background-image: linear-gradient( -45deg, transparent 65%, var(--color-accent) 0),
+                        linear-gradient( 45deg, transparent 75%, var(--color-accent) 0),
+                        linear-gradient( -45deg, var(--color-accent) 40%, transparent 0),
+                        linear-gradient( 45deg, var(--color-accent) 30%, var(--color-accent-contrast) 0, var(--color-accent-contrast) 40%, transparent 0),
+                        linear-gradient( -45deg, var(--color-accent-contrast) 50%, var(--color-accent) 0);
       background-repeat: no-repeat;
     }
   }
   &[type="radio"] {
     &:checked {
-      background-color: var(--accent);
+      background-color: var(--color-accent);
       box-shadow: 0 0 0 3px var(--background-color-card) inset;
       &:focus, &:focus-visible {
         box-shadow: 0 0 0 3px var(--background-color-card) inset,
                     0 0 0 2px var(--background-color-card),
-                    0 0 0 4px var(--accent);
+                    0 0 0 4px var(--color-accent);
       }
     }
   }
