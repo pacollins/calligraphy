@@ -1,8 +1,8 @@
 /* Mixins */
 
 $breakpoints: (
-  main-container: 920px,
-  full-container: 1240px
+  main-container: calc(#{$width-content-min} + #{$width-aside-min} * 1.75),
+  full-container: calc(#{$width-content-min} + #{$width-aside-min} * 3.25)
 );
 
 @mixin break($breakpoint, $limit:min) {
