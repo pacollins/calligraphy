@@ -231,6 +231,7 @@ body {
 #reading-progress {
   margin: 0 -1rem;
   position: absolute;
+  z-index: -1;
 }
 
 #site-main {
@@ -247,7 +248,7 @@ body {
                           "l content . r"
                           "l footer . r";
     grid-template-columns: minmax(1.25rem, 1fr) minmax(auto, $width-content) auto minmax(1.25rem, 1fr);
-    grid-template-row: auto 1fr auto;
+    grid-template-rows: auto 1fr auto;
   }
   @include break(full-container) {
     grid-template-areas:  "l left content right r"

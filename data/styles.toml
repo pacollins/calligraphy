@@ -1,7 +1,9 @@
 # widths
 width-site = "65rem"
-width-content = "33rem"
-width-aside = "17rem"
+width-content = "70ch" # Accepts any value. The optimal line length for readibility is 50-75 characters ("ch" unit).
+width-content-min = "50ch" # Accepts only "ch" unit.
+width-aside = "35ch" # Accepts any value. The default is 1/5 of width-content.
+width-aside-min = "35ch" # Accepts only "ch" unit.
 
 # fonts
 font-header = "'Playfair Display', serif"
