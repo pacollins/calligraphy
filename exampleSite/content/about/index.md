@@ -1,5 +1,6 @@
 +++
 title = "About Calligraphy"
+layout = "page"
 +++
 
 **Cal·lig·ra·phy** *(kəˈliɡrəfē)* n. <br>

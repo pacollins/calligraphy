@@ -1,0 +1,6 @@
+{{- define "main" }}
+<article class="l-container_content card">
+  <h1 class="card-title">{{ .Title }}</h1>
+  {{ partialCached "function/content.html" . .Page }}
+</article>
+{{- end }}
