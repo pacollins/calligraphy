@@ -1,4 +1,4 @@
-<header id="site-header" class="card{{ if (not .IsHome) }} l-compact{{ end }}">
+<header id="site-header" {{ if (not .IsHome) }}class="l-compact"{{ end }}>
   <nav class="l-container_site">
     <div class="branding">
         <h1 class="branding-title">

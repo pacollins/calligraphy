@@ -1,5 +1,5 @@
-// identify the current sidebars
-const sidebar = document.querySelectorAll(".sidebar");
+// identify the current asides
+const aside = document.querySelectorAll(".aside-fade_authors");
 
 // identify the header class list
 const headerClasses = document.getElementById("site-header").classList;
@@ -43,10 +43,10 @@ function scrollShow() {
         compact = true;
       }
 
-      // activates sidebars
-      if (sidebar) {
-        for (let i = 0; i < sidebar.length; i++) {
-          sidebar[i].classList.add("active");
+      // activates asides
+      if (aside) {
+        for (let i = 0; i < aside.length; i++) {
+          aside[i].classList.add("active");
         }
       }
 
@@ -65,10 +65,10 @@ function scrollShow() {
         compact = false;
       }
 
-      // deactivates sidebars
-      if (sidebar) {
-        for (let i=0; i<sidebar.length; i++) {
-          sidebar[i].classList.remove("active");
+      // deactivates asides
+      if (aside) {
+        for (let i=0; i<aside.length; i++) {
+          aside[i].classList.remove("active");
         }
       }
 

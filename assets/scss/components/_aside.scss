@@ -1,0 +1,20 @@
+.aside {
+  height: fit-content;
+  position: sticky;
+  max-width: $width-aside;
+  top: 10em;
+  width: fit-content;
+  article:first-of-type {
+    margin: 0;
+  }
+  &-fade_authors {
+    @extend .aside;
+    opacity: 0;
+    transition: opacity .4s ease-in-out;
+    visibility: hidden;
+    &.active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
