@@ -12,7 +12,8 @@
   {{ hugo.Generator }}
   <meta name="robots" content="{{ cond hugo.IsProduction "index, follow" "noindex, nofollow"}}">
 
-  {{ partialCached "site/styles.html" . }}
+  {{ partialCached "site/styles-libraries.html" . }}
+  {{ partialCached "site/styles-main.html" . }}
 
   {{- if .Site.Params.meta.faviconComplete }}
   {{- $version := print "?v=" .Site.Params.meta.faviconVersion | default "" }}
