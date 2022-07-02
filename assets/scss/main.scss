@@ -1,5 +1,36 @@
 @charset 'utf-8';
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+
+{{- if .Site.Params.cdn }}
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+{{- else }}
+@font-face {
+	font-family: 'Playfair Display';
+	src: url('/fonts/PlayfairDisplay-VariableFont_wght.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400 900;
+}
+
+@font-face {
+	font-family: 'Playfair Display';
+	src: url('/fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf') format('truetype');
+  font-style: italic;
+  font-weight: 400 900;
+}
+
+@font-face {
+	font-family: 'Source Sans 3';
+	src: url('/fonts/SourceSans3-VariableFont_wght.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 200 900;
+}
+
+@font-face {
+	font-family: 'Source Sans 3';
+	src: url('/fonts/SourceSans3-Italic-VariableFont_wght.ttf') format('truetype');
+  font-style: italic;
+  font-weight: 200 900;
+}
+{{- end }}
 
 /* SCSS Variables loaded from calligraphy/data/styles.toml */
 
