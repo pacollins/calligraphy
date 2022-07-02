@@ -89,7 +89,6 @@ enableInlineShortcodes = true
 enableEmoji = true
 
 [params]
-  tagline = "Elegant Writing"
   cdn = false
 
 [params.meta]
@@ -99,6 +98,11 @@ enableEmoji = true
   faviconVersion = ""
   faviconMSColor = "#00aba9"
   faviconiOSColor = "#00aba9"
+
+[params.header]
+  logo = ""
+  title = true
+  tagline = "Elegant Writing"
 
 [[menu.main]]
   identifier = "about"
@@ -149,7 +153,7 @@ enableEmoji = true
 
 [module.hugoVersion]
   extended = true
-  min = "0.89.0"
+  min = "0.101.0"
 
 [privacy.twitter]
   enableDNT = true

@@ -43,6 +43,14 @@ $breakpoints: (
   background-size: 0 1px, 0 1px, 100% 1px;
 }
 
+%underline-unset {
+  background-image: unset;
+  background-position: unset;
+  background-repeat: unset;
+  background-size: unset;
+  text-shadow: unset;
+}
+
 %border-float {
   border-bottom: 5px solid var(--background-color-alt);
 }
