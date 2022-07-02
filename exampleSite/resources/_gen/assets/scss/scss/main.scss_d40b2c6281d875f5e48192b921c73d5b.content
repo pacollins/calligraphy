@@ -793,23 +793,15 @@ body {
     margin-right: auto;
     padding-right: 1rem; }
     #site-header .branding-title {
-      font-size: clamp(1.2rem, 4vw, 2.074rem);
+      font-size: clamp(1.75rem, 4vw, 2.074rem);
       font-weight: 900;
       margin: unset;
       /* Reset h1 */ }
       #site-header .branding-title a {
         display: flex;
         align-items: center; }
-        @media screen and (max-width: calc(50ch + 35ch * 1.75)) {
-          #site-header .branding-title a .logo {
-            display: none; } }
         @media screen and (min-width: calc(50ch + 35ch * 1.75)) {
           #site-header .branding-title a .logomark {
-            display: none; } }
-        #site-header .branding-title a.lmt span {
-          display: none; }
-        @media screen and (min-width: calc(50ch + 35ch * 1.75)) {
-          #site-header .branding-title a.lt span {
             display: none; } }
         #site-header .branding-title a.mt .logomark {
           display: block; }

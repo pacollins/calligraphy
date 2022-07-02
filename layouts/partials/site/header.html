@@ -3,10 +3,13 @@
   <nav class="l-container_site">
     <div class="branding">
       <h1 class="branding-title">
-        <a href="/" class="{{ if $header.logo }}l{{end}}{{ if $header.logomark }}m{{end}}{{ if $header.title }}t{{end}}" accesskey="h" title="Home (Alt + H)">
-        {{ if $header.logo }}<img class="logo" src="{{ $header.logo }}" alt="{{ .Site.Title }}'s Logo">{{ end }}
-        {{ if $header.logomark }}<img class="logomark" src="{{ $header.logomark  }}" alt="{{ .Site.Title }}'s Logomark">{{ end }}
-        {{ if $header.title }}<span>{{ .Site.Title }}</span>{{ end }}
+        <a href="/" class="{{ if $header.logomark }}m{{end}}{{ if $header.title }}t{{end}}" accesskey="h" title="Home (Alt + H)">
+        {{- if $header.logo }}
+          <img class="logo" src="{{ $header.logo }}" alt="{{ .Site.Title }}'s Logo">
+        {{- else }}
+          {{ if $header.logomark }}<img class="logomark" src="{{ $header.logomark  }}" alt="{{ .Site.Title }}'s Logomark">{{ end }}
+          {{ if $header.title }}<span>{{ .Site.Title }}</span>{{ end }}
+        {{- end }}
         </a>
       </h1>
       {{ with $header.tagline }}<p class="branding-tagline">{{ . }}</p>{{ end }}

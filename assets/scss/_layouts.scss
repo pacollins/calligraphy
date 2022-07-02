@@ -71,27 +71,14 @@ body {
     margin-right: auto;
     padding-right: 1rem;
     &-title {
-      font-size: clamp(1.2rem, 4vw, 2.074rem);
+      font-size: clamp(1.75rem, 4vw, 2.074rem);
       font-weight: 900;
       margin: unset; /* Reset h1 */
       a {
         @extend %underline-unset;
         display: flex;
         align-items: center;
-        .logo {
-          @include break(main-container, max) {
-            display: none;
-          }
-        }
         .logomark {
-          @include break(main-container) {
-            display: none;
-          }
-        }
-        &.lmt span {
-          display: none;
-        }
-        &.lt span {
           @include break(main-container) {
             display: none;
           }
