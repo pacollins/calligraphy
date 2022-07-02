@@ -34,18 +34,25 @@ a.toc-link {
   background-color: unset; }
 
 /* Mixins */
-#site-header .branding-title a, #site-header a, .author-name, .card-title a, p a {
+#site-header a, .author-name, .card-title a, p a {
   background-image: linear-gradient(transparent, transparent), linear-gradient(currentColor, currentColor), linear-gradient(var(--color-accent), var(--color-accent));
   background-position: 0 85%, 100% 85%, 0 85%;
   background-repeat: no-repeat;
   background-size: 0 1px, 100% 1px, 0 1px;
   text-shadow: -2px 0px 0 var(--background-color-card), -2px -1px 0 var(--background-color-card), -2px 1px 0 var(--background-color-card), 0px 1px 0 var(--background-color-card), 1px 1px 0 var(--background-color-card), 2px 1px 0 var(--background-color-card); }
 
-#site-header .branding-title a, #site-header a, .author-name, .card-title a, p a code {
+#site-header a, .author-name, .card-title a, p a code {
   background-size: 100% 1px, 0 1px, 0 1px; }
 
 #site-header a:hover, #site-header a:focus, #site-header a.active {
   background-size: 0 1px, 0 1px, 100% 1px; }
+
+#site-header .branding-title a {
+  background-image: unset;
+  background-position: unset;
+  background-repeat: unset;
+  background-size: unset;
+  text-shadow: unset; }
 
 #site-header, .card, .card_author, table, .highlight pre {
   border-bottom: 5px solid var(--background-color-alt); }
@@ -791,7 +798,26 @@ body {
       margin: unset;
       /* Reset h1 */ }
       #site-header .branding-title a {
-        background-position: 0 90%, 100% 90%, 0 90%; }
+        display: flex;
+        align-items: center; }
+        @media screen and (max-width: calc(50ch + 35ch * 1.75)) {
+          #site-header .branding-title a .logo {
+            display: none; } }
+        @media screen and (min-width: calc(50ch + 35ch * 1.75)) {
+          #site-header .branding-title a .logomark {
+            display: none; } }
+        #site-header .branding-title a.lmt span {
+          display: none; }
+        @media screen and (min-width: calc(50ch + 35ch * 1.75)) {
+          #site-header .branding-title a.lt span {
+            display: none; } }
+        #site-header .branding-title a.mt .logomark {
+          display: block; }
+        @media screen and (min-width: calc(50ch + 35ch * 1.75)) {
+          #site-header .branding-title a.m .logomark {
+            display: block; } }
+      #site-header .branding-title img {
+        height: 50px; }
     @media screen and (max-width: calc(50ch + 35ch * 1.75)) {
       #site-header .branding-tagline {
         display: none; } }

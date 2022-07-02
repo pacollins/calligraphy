@@ -75,9 +75,38 @@ body {
       font-weight: 900;
       margin: unset; /* Reset h1 */
       a {
-        @extend %underline-base;
-        @extend %underline-transparent;
-        background-position: 0 90%, 100% 90%, 0 90%;
+        @extend %underline-unset;
+        display: flex;
+        align-items: center;
+        .logo {
+          @include break(main-container, max) {
+            display: none;
+          }
+        }
+        .logomark {
+          @include break(main-container) {
+            display: none;
+          }
+        }
+        &.lmt span {
+          display: none;
+        }
+        &.lt span {
+          @include break(main-container) {
+            display: none;
+          }
+        }
+        &.mt .logomark {
+          display: block;
+        }
+        &.m .logomark {
+          @include break(main-container) {
+            display: block;
+          }
+        }
+      }
+      img {
+        height: 50px;
       }
     }
     &-tagline {
