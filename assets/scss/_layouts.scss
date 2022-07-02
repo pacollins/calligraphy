@@ -78,19 +78,6 @@ body {
         @extend %underline-unset;
         display: flex;
         align-items: center;
-        .logomark {
-          @include break(main-container) {
-            display: none;
-          }
-        }
-        &.mt .logomark {
-          display: block;
-        }
-        &.m .logomark {
-          @include break(main-container) {
-            display: block;
-          }
-        }
       }
       img {
         height: 50px;

@@ -800,14 +800,6 @@ body {
       #site-header .branding-title a {
         display: flex;
         align-items: center; }
-        @media screen and (min-width: calc(50ch + 35ch * 1.75)) {
-          #site-header .branding-title a .logomark {
-            display: none; } }
-        #site-header .branding-title a.mt .logomark {
-          display: block; }
-        @media screen and (min-width: calc(50ch + 35ch * 1.75)) {
-          #site-header .branding-title a.m .logomark {
-            display: block; } }
       #site-header .branding-title img {
         height: 50px; }
     @media screen and (max-width: calc(50ch + 35ch * 1.75)) {

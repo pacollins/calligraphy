@@ -100,9 +100,8 @@ enableEmoji = true
   faviconiOSColor = "#00aba9"
 
 [params.header]
-  title = true
   logo = ""
-  logomark = ""
+  title = true
   tagline = "Elegant Writing"
 
 [[menu.main]]
