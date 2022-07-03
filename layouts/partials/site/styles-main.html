@@ -1,0 +1,2 @@
+{{- $main := resources.Get "scss/main.scss" | resources.ExecuteAsTemplate "scss/main.scss" . | toCSS | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $main.RelPermalink }}" crossorigin="anonymous" integrity="{{ $main.Data.Integrity }}">

@@ -7,7 +7,7 @@ width-aside-min = "35ch" # Accepts only "ch" unit.
 
 # fonts
 font-header = "'Playfair Display', serif"
-font-body = "'Source Sans Pro', sans-serif"
+font-body = "'Source Sans 3', sans-serif"
 
 # transitions
 transition-base = ".3s ease-in-out"
