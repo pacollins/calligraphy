@@ -56,8 +56,7 @@ $dark-image-filter: grayscale(35%);
 {{- end }}
 {{- end }}
 
-@import "vendor/__vendor-dir";/* Variables */
-@import "mixins";
+@import "mixin";
 @import "typography";
 @import "utility/_utility-dir";
 @import "components/__components-dir";
