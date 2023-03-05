@@ -13,8 +13,11 @@
 
 {{- /* Escape character */ -}}
 {{- /* {?X} -> X */ -}}
-{{- $REin := `\{\?(.)\}` -}}
-{{- $REout := `$1` -}}
-{{- $content = $content | replaceRE $REin $REout -}}
+{{- $escapeIn := `\{\?(.)\}` -}}
+{{- $escapeOut := `$1` -}}
+{{- /* Empty paragraph tags */ -}}
+{{- $paragraphIn := `<p[^>]*>(\\s*|&nbsp;)*</p>` -}}
+{{- $paragraphOut := `` -}}
+{{- $content = $content | replaceRE $escapeIn $escapeOut | replaceRE $paragraphIn $paragraphOut -}}
 
-{{- return ($content | safeHTML) -}}
+{{- return ($content | safeHTML ) -}}
