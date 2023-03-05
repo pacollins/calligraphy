@@ -6,7 +6,7 @@
   </div>
 </div>
 {{ $counter := 0 }}
-  {{- range .Paginator.Pages }}
+{{- range .Paginator.Pages }}
 <article class="card{{ if eq $counter 0 }} card--featured{{ else if gt $counter 2 }} card--additional{{ end }}">
   {{- if .Params.feature }}
   {{- $thumbnail := .Params.feature }}
@@ -31,11 +31,11 @@
     <h2 class="card__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
     <div class="card__description">{{ .Params.description | default (.Summary | truncate 200 "...") }}</div>
   </div>
-  </article>
+</article>
 {{ $counter = add $counter 1 }}
-  {{- end }}
+{{- end }}
 {{- end }}
 
 {{- define "pagination" }}
-  {{ partial "pagination" . }}
+  {{ partial "site/pagination" . }}
 {{- end }}

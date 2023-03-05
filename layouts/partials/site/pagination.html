@@ -1,0 +1,75 @@
+<footer class="site__container">
+  <nav aria-label="Page navigation">
+    <ul class="pagination">
+    {{- if .IsPage }}
+      {{- if .NextInSection }}
+      <li class="pagination__button pagination__button--left">
+        <a href="{{ .NextInSection.Permalink }}" class="pagination__title">
+          <span class="pagination__label pagination__label--previous">Next Post</span>
+          {{ .NextInSection.Title }}
+        </a>
+      </li>
+      {{- end }}
+      {{ if .PrevInSection }}
+      <li class="pagination__button pagination__button--right">
+        <a href="{{ .PrevInSection.Permalink }}" class="pagination__title">
+          <span class="pagination__label pagination__label--next">Previous Post</span>
+          {{ .PrevInSection.Title }}
+        </a>
+      </li>
+      {{ end }}
+    {{- else if .Paginator }}
+      {{- with .Paginator }}
+      {{- $currentPageNumber := .PageNumber }}
+
+      {{- with .First }}
+        {{- if ne $currentPageNumber .PageNumber }}
+        <li class="pagination__button">
+          <a href="{{ .URL }}" class="pagination__title pagination__title--first" aria-label="First"></a>
+        </li>
+        {{- end }}
+      {{- end }}
+
+      {{- with .Prev }}
+      <li class="pagination__button">
+        <a href="{{ .URL }}" class="pagination__title pagination__title--previous" aria-label="Previous"></a>
+      </li>
+      {{- end }}
+
+      {{- $slots := 3 }}
+      {{- $start := math.Max 1 (sub .PageNumber (math.Floor (div $slots 2))) }}
+      {{- $end := math.Min .TotalPages (sub (add $start $slots) 1) }}
+      {{- if lt (add (sub $end $start) 1) $slots }}
+        {{- $start = math.Max 1 (add (sub $end $slots) 1) }}
+      {{- end }}
+
+      {{- range $k := seq $start $end }}
+        {{- if eq $.Paginator.PageNumber $k }}
+        <li class="pagination__button pagination__button--active">
+          <a aria-current="page" class="pagination__title" aria-label="Page {{ $k }}">{{ $k }}</a>
+        </li>
+        {{- else }}
+        <li class="pagination__button">
+          <a href="{{ (index $.Paginator.Pagers (sub $k 1)).URL }}" class="pagination__title" aria-label="Page {{ $k }}">{{ $k }}</a>
+        </li>
+        {{- end }}
+      {{- end }}
+
+      {{- with .Next }}
+      <li class="pagination__button">
+        <a href="{{ .URL }}" class="pagination__title pagination__title--next" aria-label="Next"></a>
+      </li>
+      {{- end }}
+
+      {{- with .Last }}
+        {{- if ne $currentPageNumber .PageNumber }}
+        <li class="pagination__button">
+          <a href="{{ .URL }}" class="pagination__title  pagination__title--last" aria-label="Last"></a>
+        </li>
+        {{- end }}
+      {{- end }}
+      {{- end }}
+    {{- end }}
+    </ul>
+  </nav>
+</footer>
