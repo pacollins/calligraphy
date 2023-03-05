@@ -1,14 +1,37 @@
 {{- define "main" }}
-<article class="l-container_content card">
-  {{ partialCached "entry/header" . .Page }}
-  <section class="card-content">
-    {{ partialCached "function/content.html" . .Page }}
-  </section>
-  {{- if .Params.tags }}
-  	{{ $tags := sort .Params.tags }}
-  	{{ $variant := printf "%x" $tags }}
-  	{{ partialCached "entry/footer.html" . $variant }}
+<article class="card card--page{{ if not .Params.feature }} card--coverless{{ end }}">
+  {{- if .Params.feature }}
+  {{- $thumbnail := .Params.feature }}
+  {{- if not (in .Params.feature "http") }}
+    {{- with .Resources.GetMatch .Params.feature }}
+      {{- $image := . }}
+      {{- $thumbnail = ($image.Resize "x1500").RelPermalink }}
+    {{- else }}
+      {{- $thumbnail = .Params.feature }}
+    {{- end }}
   {{- end }}
+    <figure class="card__cover">
+      <img src="{{ $thumbnail }}" alt="{{ .Params.featureAlt | default .Params.featureCaption | default "A Decorative Image" }}" height="500px">
+    </figure>
+  {{- end }}
+  <div class="card__content">
+    <div class="card__meta">
+      {{ with .Params.Series }}<a href="/series/{{ . | urlize }}" class="card__series" data-taxonomy="{{ print "series-" . | urlize }}">{{ . }}</a>{{ end }}
+      {{ with .PublishDate }}<time datetime="{{ . }}" class="card__date">{{ cond (eq (.Format "2006") (now.Format "2006")) (.Format "Jan 2") (.Format "2 Jan 2006") }}</time>{{ end }}
+      {{/*  <span class="card__time">{{ .ReadingTime }} min read</span>  */}}  
+    </div>
+    <h1 class="card__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
+    {{/*  {{- if .Params.authors }}
+    {{- range first 1 .Params.authors }}
+    <div class="card__author author">
+      {{- $authorPage := site.GetPage "authors" (urlize .) }}
+      {{- $image := (partial "function/author-image" (dict "author" . "size" "200x200 center")) }}
+      <a href="{{ $authorPage.Permalink }}" class="author__name"><img src="{{ $image.thumbnail }}" alt="{{ $authorPage.Title }}'s Headshot"  width="50px" height="50px" class="author__headshot">{{ $authorPage.Title }}</a>
+    </div>
+  {{- end }}
+    {{- end }}   */}}
+    {{ partial "function/content.html" . }}
+  </div>
 </article>
 {{- end }}
 

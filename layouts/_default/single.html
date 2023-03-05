@@ -1,6 +1,8 @@
 {{- define "main" }}
-<article class="l-container_content card">
-  <h1 class="card-title">{{ .Title }}</h1>
-  {{ partialCached "function/content.html" . .Page }}
+<article class="card card--page{{ if not .Params.feature }} card--coverless{{ end }}">
+  <div class="card__content">
+    <h1 class="card__title">{{ .Title }}</h1>
+    {{ partialCached "function/content.html" . .Page }}
+  </div>
 </article>
 {{- end }}

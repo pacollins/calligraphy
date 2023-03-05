@@ -1,19 +1,39 @@
 {{- define "main" }}
-<section class="l-container_content">
-  <div class="card" data-taxonomy="{{ print .Page.Section "-" .Page.Title | urlize }}">
-    <h1 class="card-title">{{ .Data.Singular | humanize }}: {{ .Title }}</h1>
-    {{ .Content }}
+<div class="card card--featured" data-taxonomy="{{ print .Page.Section "-" .Page.Title | urlize }}">
+  <div class="card__content" >
+    <h1 class="card__title card__title">{{ .Data.Singular | humanize }}: {{ .Title }}</h1>
+    {{ partialCached "function/content.html" . .Page }}
   </div>
+</div>
+{{ $counter := 0 }}
   {{- range .Paginator.Pages }}
-  <article class="card">
-    {{ partialCached "entry/header" . .Page }}
-    <section class="card-content">
-      {{ .Summary | truncate 350 "..." }}
-    </section>
-    {{ partialCached "entry/footer" . .Page }}
-  </article>
+<article class="card{{ if eq $counter 0 }} card--featured{{ else if gt $counter 2 }} card--additional{{ end }}">
+  {{- if .Params.feature }}
+  {{- $thumbnail := .Params.feature }}
+  {{- if not (in .Params.feature "http") }}
+    {{- with .Resources.GetMatch .Params.feature }}
+      {{- $image := . }}
+      {{- $thumbnail = ($image.Fill "1280x400").RelPermalink }}
+    {{- else }}
+      {{- $thumbnail = .Params.feature }}
+    {{- end }}
   {{- end }}
-</section>
+    <figure class="card__cover">
+      <a href="{{ .RelPermalink }}"><img src="{{ $thumbnail }}" alt="{{ .Params.featureAlt | default .Params.featureCaption | default "A Decorative Image" }}" height="500px"></a>
+    </figure>
+  {{- end }}
+  <div class="card__content">
+    <div class="card__meta">
+      {{ with .Params.Series }}<a href="/series/{{ . | urlize }}" class="card__series" data-taxonomy="{{ print "series-" . | urlize }}">{{ . }}</a>{{ end }}
+      {{ with .PublishDate }}<time datetime="{{ . }}" class="card__date">{{ cond (eq (.Format "2006") (now.Format "2006")) (.Format "Jan 2") (.Format "2 Jan 2006") }}</time>{{ end }}
+      {{/*  <span class="card__time">{{ .ReadingTime }} min read</span>  */}}
+    </div>
+    <h2 class="card__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    <div class="card__description">{{ .Params.description | default (.Summary | truncate 200 "...") }}</div>
+  </div>
+  </article>
+{{ $counter = add $counter 1 }}
+  {{- end }}
 {{- end }}
 
 {{- define "pagination" }}
