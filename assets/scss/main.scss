@@ -59,7 +59,7 @@ $dark-image-filter: grayscale(35%);
 @import "vendor/__vendor-dir";/* Variables */
 @import "mixins";
 @import "typography";
-@import "utility";
+@import "utility/_utility-dir";
 @import "components/__components-dir";
 @import "layouts";
 @import "shame";
