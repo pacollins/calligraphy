@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.Language }}" data-theme="light">
+<html lang="{{ .Site.Language }}" data-dark-mode="off" data-animations="on">
 
 <head>
   <meta charset="utf-8">
@@ -60,24 +60,31 @@
 <body>
 
   <script type="text/javascript">
-    // identify prefered theme and load here to prevent flicker
-    function detectTheme() {
-      var theme = "light";
 
-      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        var theme = "dark";
+    // detect user preferences here to prevent flickers
+    function detectPreferences() {
+
+      // detect dark mode preference
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches && !(localStorage.getItem("dark-mode") === "off") ) {
+        document.documentElement.setAttribute("data-dark-mode", "on");
+        localStorage.setItem("dark-mode", "on");
+      } else {
+        document.documentElement.setAttribute("data-dark-mode", "off");
+        localStorage.setItem("dark-mode", "off");
       }
-
-      if (localStorage.getItem("theme")) {
-        var theme = localStorage.getItem("theme");
-      }
-
-      if (theme == "dark") {
-        document.documentElement.setAttribute("data-theme", "dark");
+      
+      // detect reduced motion preference
+      if (window.matchMedia("(preferes-reduced-animations)").matches && !localStorage.getItem("animations") === "on") {
+        document.documentElement.setAttribute("data-animations", "off");
+        localStorage.setItem("animations", "off");
+      } else {
+        document.documentElement.setAttribute("data-animations", "on");
+        localStorage.setItem("animations", "on");
       }
     }
 
-    detectTheme();
+    detectPreferences();
+
   </script>
 
   {{ block "header" . }}
@@ -91,7 +98,6 @@
     {{ block "sidebar-right" . }}{{ end }}
     {{ block "pagination" . }}{{ end }}
   </main>
-
   {{ block "footer" . }}{{ partialCached "site/footer.html" . }}{{ end }}
 
 </body>

@@ -17,7 +17,7 @@ html {
   --color-block: #{$color-block};
   --color-button: #{$color-button};
   --background-color-button: #{$background-color-button};
-  &[data-theme="light"] {
+  &[data-dark-mode="off"] {
     --color: #{$light-color};
     --background-color: #{$light-background-color};
     --background-color-card: #{$light-background-color-card};
@@ -28,7 +28,7 @@ html {
     --color-link: #{$light-color-link};
     --border-color: #{$light-border-color};
   }
-  &[data-theme="dark"] {
+  &[data-dark-mode="on"] {
     --color: #{$dark-color};
     --background-color: #{$dark-background-color};
     --background-color-card: #{$dark-background-color-card};

@@ -1,8 +1,8 @@
 <footer id="site-footer" class="footer">
   <div class="site__container">
     <div class="footer__left">
-  {{- /* Please don't remove this attribution as a "Thank You" to the theme maintainers. */}}
-  <p>{{ .Site.Copyright }} | Powered by <a href="https://gohugo.io/">Hugo</a> and <a href="https://github.com/pacollins/calligraphy">Calligraphy</a></p>
+      {{- /* Please don't remove this attribution as a "Thank You" to the theme maintainers. */}}
+      <p>{{ .Site.Copyright }} | Powered by <a href="https://gohugo.io/">Hugo</a> and <a href="https://github.com/pacollins/calligraphy">Calligraphy</a></p>
     </div>
     <div class="footer__right">
       <button id="dark-mode-button" class="footer__button">
@@ -18,7 +18,7 @@
   </div>
 </footer>
 
-{{- $main := resources.Match "js/main/*.js" | resources.Concat "js/main.js" }}
+{{- $main := resources.Match "js/*.js" | resources.Concat "js/main.js" }}
 {{- if .Site.Params.cdn }}
 {{- range .Site.Params.Library }}
 {{- if and (eq .type "script") .global }}
