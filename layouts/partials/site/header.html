@@ -1,31 +1,34 @@
-<header id="site-header" class="card{{ if (not .IsHome) }} l-compact{{ end }}">
-  <nav class="l-container_site">
-    <div class="branding">
-        <h1 class="branding-title">
-          <a href="/" accesskey="h" title="Home (Alt + H)">{{ .Site.Title }}</a>
-        </h1>
-        {{- /* TODO: Add Logo */}}
-      <p class="branding-tagline">{{ .Site.Params.tagline }}</p>
-    </div>
-    <label class="toggle" accesskey="t" title="Change Theme (Alt + T)">
-      <input id="theme-toggle" type="checkbox"></input>
-      <span class="theme-button"></span>
-    </label>
-    <div id="site-nav">
-      <label class="toggle" accesskey="n" title="Open Site Navigation (Alt + N)">
-        <input id="nav-toggle" type="checkbox"></input>
-        <span class="nav-button"></span>
-      </label>
-      <ul class="menu">
+<a href="#site-main" class="banner__skip">Skip to main content</a>
+
+<div id="site-banner" class="banner">
+  <div class="site__container">
+    <header class="banner__header" role="banner">
+      <div class="banner__brand">
+        <a href="/" title="{{ .Site.Params.brand.title }} Home">
+          {{ if .Site.Params.brand.logo }}
+          <img src="{{ .Site.Params.brand.logo }}" alt="{{ .Site.Params.brand.title | default .Site.Title }}" class="brand__logo">
+          {{ else }}
+          {{ .Site.Params.brand.titleFull | default .Site.Title }}
+          {{ end }}
+        </a>
+        {{ with .Site.Params.brand.tagline }}<p>{{ . }}</p>{{ end }}  
+      </div>
+      <button id="nav-toggle" class="banner__nav-toggle" title="Open main site navigation">
+        Menu
+      </button>
+    </header>
+    
+    <nav id="site-nav" class="banner__nav" aria-label="Primary navigation">
+      <ul>
         {{- $currentURL := .RelPermalink }}
         {{- range .Site.Menus.main }}
         {{- $active := and (eq $currentURL .URL) }}
-        <li class="menu-item">
-          <a href="{{ .URL }}"{{ if $active }} class="active{{ if $.IsHome}}-mobile{{ end }}"{{ end }}>{{ .Name }}</a>
+        <li{{ if $active }} aria-current="page"{{ end }}>
+          <a href="{{ .URL }}">{{ .Name }}</a>
         </li>
         {{- end }}
       </ul>
-    </div>
-  </nav>
-  {{ if .IsPage }}<progress id="reading-progress" max="100" value="0" ></progress>{{ end }}
-</header>
+    </nav>
+  </div>
+  {{ if .IsPage }}<progress id="reading-progress" class="site__progress" max="100" value="0" ></progress>{{ end }}
+</div>
