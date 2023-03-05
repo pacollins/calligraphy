@@ -1,0 +1,46 @@
+.footer {
+  font-size: small;
+  color: var(--color);
+  background-color: var(--background-color-card);
+
+  p {
+    margin: 0;
+    padding: 0.5em;
+  }
+
+  a {
+    text-shadow: -2px 0px 0 var(--background-color),
+      -2px -1px 0 var(--background-color),
+      -2px 1px 0 var(--background-color),
+      0px 1px 0 var(--background-color),
+      1px 1px 0 var(--background-color),
+      2px 1px 0 var(--background-color);
+  }
+
+  &__button {
+    margin: 0;
+    padding: 0.5em;
+    vertical-align: middle;
+    background-color: var(--background-color-card);
+    border: 0;
+
+    &:hover {
+      color: var(--color);
+      background-color: var(--background-color-alt);
+    }
+
+    span {
+      display: inline-block;
+      min-width: 3ch;
+      font-weight: bold;
+      text-transform: capitalize;
+    }
+  }
+
+  & .site__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+  }
+}

@@ -1,0 +1,44 @@
+[data-animations="off"] * {
+  transition: none !important;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.l-grid {
+  display: grid;
+  max-width: 74rem;
+  margin: 3rem auto;
+  padding: 0 1rem;
+  row-gap: 2rem;
+  grid-template-columns: repeat(12, 1fr);
+
+  @include break(54rem) {
+    column-gap: 2rem;
+  }
+}
+
+.site {
+  &__container {
+    width: 100%;
+    max-width: 74rem;
+    margin: auto;
+    grid-column: span 12;
+  }
+
+  &__progress {
+    position: absolute;
+    bottom: -5px;
+    z-index: 1;
+  }
+
+  &__main {
+    flex-grow: 1;
+    background-color: var(--background-color);
+  }
+}
