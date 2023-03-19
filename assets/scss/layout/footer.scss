@@ -1,46 +1,46 @@
+@use "../abstract" as *;
+
 .footer {
-  font-size: small;
-  color: var(--color);
-  background-color: var(--background-color-card);
+    font-size: typeScale(-1, em);
+    color: var(--color-text);
+    background-color: var(--color-canvas-tint);
 
-  p {
-    margin: 0;
-    padding: 0.5em;
-  }
-
-  a {
-    text-shadow: -2px 0px 0 var(--background-color),
-      -2px -1px 0 var(--background-color),
-      -2px 1px 0 var(--background-color),
-      0px 1px 0 var(--background-color),
-      1px 1px 0 var(--background-color),
-      2px 1px 0 var(--background-color);
-  }
-
-  &__button {
-    margin: 0;
-    padding: 0.5em;
-    vertical-align: middle;
-    background-color: var(--background-color-card);
-    border: 0;
-
-    &:hover {
-      color: var(--color);
-      background-color: var(--background-color-alt);
+    p {
+        margin: 0;
+        padding: 0.5em;
     }
 
-    span {
-      display: inline-block;
-      min-width: 3ch;
-      font-weight: bold;
-      text-transform: capitalize;
+    a {
+        text-shadow: -2px 0px 0 var(--color-canvas),
+            -2px -1px 0 var(--color-canvas), -2px 1px 0 var(--color-canvas),
+            0px 1px 0 var(--color-canvas), 1px 1px 0 var(--color-canvas),
+            2px 1px 0 var(--color-canvas);
     }
-  }
 
-  & .site__container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-  }
+    &__button {
+        margin: 0;
+        padding: 0.5em;
+        vertical-align: middle;
+        background-color: var(--color-canvas-tint);
+        border: 0;
+
+        &:hover {
+            color: var(--color-text);
+            background-color: var(--color-ui-float);
+        }
+
+        span {
+            display: inline-block;
+            min-width: 3ch;
+            font-weight: bold;
+            text-transform: capitalize;
+        }
+    }
+
+    & .site__container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+    }
 }

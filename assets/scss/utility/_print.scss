@@ -1,60 +1,60 @@
 @media print {
-  *,
-  *::before,
-  *::after {
-    background: #fff !important;
-    box-shadow: none !important;
-    color: #000 !important;
-    text-shadow: none !important;
-  }
+    *,
+    *::before,
+    *::after {
+        background: #fff !important;
+        box-shadow: none !important;
+        color: #000 !important;
+        text-shadow: none !important;
+    }
 
-  a,
-  a:visited {
-    text-decoration: underline;
-  }
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
 
-  a[href]::after {
-    content: " (" attr(href) ")";
-  }
+    a[href]::after {
+        content: " (" attr(href) ")";
+    }
 
-  abbr[title]::after {
-    content: " (" attr(title) ")";
-  }
+    abbr[title]::after {
+        content: " (" attr(title) ")";
+    }
 
-  /* Hide Non-Content Links */
-  a[href^="#"]::after,
-  a[href^="javascript:"]::after {
-    content: "";
-  }
+    /* Hide Non-Content Links */
+    a[href^="#"]::after,
+    a[href^="javascript:"]::after {
+        content: "";
+    }
 
-  pre {
-    white-space: pre-wrap !important;
-  }
+    pre {
+        white-space: pre-wrap !important;
+    }
 
-  pre,
-  blockquote {
-    border: 1px solid #000;
-    page-break-inside: avoid;
-  }
+    pre,
+    blockquote {
+        border: 1px solid #000;
+        page-break-inside: avoid;
+    }
 
-  thead {
-    display: table-header-group;
-  }
+    thead {
+        display: table-header-group;
+    }
 
-  tr,
-  img {
-    page-break-inside: avoid;
-  }
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
 
-  p,
-  h2,
-  h3 {
-    orphans: 3;
-    widows: 3;
-  }
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
 
-  h2,
-  h3 {
-    page-break-after: avoid;
-  }
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
 }

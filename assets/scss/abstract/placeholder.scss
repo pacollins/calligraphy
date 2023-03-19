@@ -1,0 +1,24 @@
+%underline-base {
+    text-shadow: -2px 0px 0 var(--color-canvas-tint),
+        -2px -1px 0 var(--color-canvas-tintt),
+        -2px 1px 0 var(--color-canvas-tint), 0px 1px 0 var(--color-canvas-tint),
+        1px 1px 0 var(--color-canvas-tint), 2px 1px 0 var(--color-canvas-tint);
+    background-image: linear-gradient(transparent, transparent),
+        linear-gradient(currentColor, currentColor),
+        linear-gradient(var(--color-text-link), var(--color-text-link));
+    background-repeat: no-repeat;
+    background-position: 0 85%, 100% 85%, 0 85%;
+    background-size: 0 1px, 100% 1px, 0 1px;
+}
+
+%underline-transparent {
+    background-size: 100% 1px, 0 1px, 0 1px;
+}
+
+%underline-accent {
+    background-size: 0 1px, 0 1px, 100% 1px;
+}
+
+%border-float {
+    border-bottom: 5px solid var(--color-ui-float);
+}

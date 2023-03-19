@@ -1,0 +1,27 @@
+dl {
+    display: grid;
+    grid-template-columns: 30% 1fr;
+}
+
+dt {
+    padding: 0.5rem 1rem;
+    text-align: right;
+    color: var(--color-text-light);
+    background: var(--color-canvas-shade);
+
+    &:not(:first-of-type) {
+        border-top: 1px solid var(--color-block);
+        border-left: 1px solid var(--color-canvas-shade);
+    }
+}
+
+dd {
+    margin: 0;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--color-canvas-shade);
+    grid-column: 2;
+
+    &:not(:first-of-type) {
+        border-top: 0;
+    }
+}

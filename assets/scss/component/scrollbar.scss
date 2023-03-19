@@ -1,0 +1,39 @@
+@use '../abstract' as *;
+
+// Dark scroll for preformatted text and tables
+pre,
+table {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-text) var(--color-canvas);
+
+    &::-webkit-scrollbar {
+        height: 7px;
+    }
+
+    &::-webkit-scrollbar-track {
+        height: 5px;
+        background: var(--color-canvas);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--color-text);
+        border: 1px solid var(--color-canvas);
+        border-radius: var(--border-radius-large);
+    }
+}
+
+// Light scroll for codeblock
+.highlight pre {
+    scrollbar-color: var(--color-canvas-shade) var(--color-text-light);
+
+    &::-webkit-scrollbar-track {
+        height: 5px;
+        background: var(--color-canvas-shade);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--color-text-light);
+        border: 1px solid var(--color-canvas-shade);
+        border-radius: var(--border-radius-large);
+    }
+}

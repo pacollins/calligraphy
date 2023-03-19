@@ -1,0 +1,29 @@
+@use '../abstract' as *;
+
+code {
+    padding: 0.25rem 0.5rem;
+    color: var(--color-text-light);
+    background-color: var(--color-canvas-shade);
+    border-radius: var(--border-radius-small);
+
+    &[data-lang]::before {
+        content: attr(data-lang);
+        position: absolute;
+        z-index: 1;
+        display: block;
+        margin-top: -1.5rem;
+        margin-left: -1.5rem;
+        padding: 0 0.5em;
+        font-size: typeScale(-1, em);
+        color: var(--color-text-light);
+        background-color: var(--color-primary);
+        box-shadow: 3px 3px var(--color-canvas-tint);
+    }
+}
+
+.highlight pre {
+    @extend %border-float;
+    color: var(--color-text-light) !important;
+    background-color: var(--color-canvas-shade) !important;
+    border-radius: var(--border-radius-small);
+}

@@ -1,0 +1,27 @@
+@function rem($pixels, $context: 16px) {
+    @return #{$pixels / $context}rem;
+}
+
+@function typeScale($steps, $units: 'rem', $type-scale: 1.33, $context: 16px) {
+    $font-size: 1;
+
+    @if $steps !=0 {
+        @for $i from 1 through abs($steps) {
+            @if $steps + 1>0 {
+                $font-size: $font-size * $type-scale;
+            } @else {
+                $font-size: $font-size / $type-scale;
+            }
+        }
+    }
+
+    @if $units == 'px' {
+        $font-size: $font-size * $base-font-size;
+    }
+
+    @if $units == '%' {
+        $font-size: $font-size * 100;
+    }
+
+    @return unquote($font-size + $units);
+}

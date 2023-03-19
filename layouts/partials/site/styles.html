@@ -1,8 +1,13 @@
-{{- $main := resources.Get "scss/main.scss" | resources.ExecuteAsTemplate "scss/main.scss" . | toCSS }}
+{{- $opts := dict
+  "targetPath" "css/style.css"
+  "transpiler" "dartsass"
+  "vars" .Site.Params.vars
+}}
+{{- $main := resources.Get "scss/style.scss" | toCSS $opts }}
 {{- if .Site.Params.cdn }}
 {{- range .Site.Params.Library }}
 {{- if eq .type "style" }}
-<link rel="stylesheet" href="{{ .path }}">
+<link href="{{ .path }}" rel="stylesheet">
 {{- end }}
 {{- end }}
 {{- else }}
@@ -15,4 +20,4 @@
 {{- $main = $libraries | append $main | resources.Concat "css/bundle.css" }}
 {{- end }}
 {{- $styles := $main | minify | fingerprint -}}
-<link rel="stylesheet" href="{{ $styles.RelPermalink }}" crossorigin="anonymous" integrity="{{ $styles.Data.Integrity }}">
+<link href="{{ $styles.RelPermalink }}" rel="stylesheet" crossorigin="anonymous" integrity="{{ $styles.Data.Integrity }}">

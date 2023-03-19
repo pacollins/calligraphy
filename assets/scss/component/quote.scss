@@ -1,0 +1,9 @@
+@use '../abstract' as *;
+
+blockquote {
+    padding-left: 1rem;
+    font-size: typeScale(1);
+    font-style: italic;
+    background-color: var(--color-canvas-tint);
+    border-left: 5px solid var(--color-text-link);
+}

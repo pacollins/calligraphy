@@ -1,0 +1,43 @@
+@use '../abstract' as *;
+
+table {
+    @extend %border-float;
+    display: block;
+    max-width: fit-content;
+    margin: 0 auto;
+    overflow-x: auto;
+    border-collapse: collapse;
+    text-align: left;
+    white-space: nowrap;
+    border-radius: var(--border-radius-small);
+}
+
+tbody tr {
+    background-color: var(--color-canvas-tint);
+}
+
+thead,
+tfoot {
+    color: var(--color-text-light);
+    text-transform: uppercase;
+    background-color: var(--color-canvas-shade);
+}
+
+tr:nth-child(even) {
+    background-color: var(--color-canvas);
+}
+
+td,
+th {
+    padding: 0.25rem 0.75rem;
+    vertical-align: middle;
+    white-space: nowrap;
+
+    &:first-of-type {
+        padding-left: 2rem;
+    }
+
+    &:last-of-type {
+        padding-right: 2rem;
+    }
+}

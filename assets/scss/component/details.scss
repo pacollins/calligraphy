@@ -1,0 +1,22 @@
+details {
+    box-sizing: border-box;
+    padding: 0 1rem;
+    border: 1px solid var(--color-canvas-shade);
+
+    summary {
+        display: list-item;
+        margin: 0 -1rem;
+        padding: 0.5rem 1rem;
+        color: var(--color-text-light);
+        background: var(--color-canvas-shade);
+    }
+
+    &[open] {
+        padding: 1rem 1rem;
+
+        summary {
+            margin-top: -1rem;
+            margin-bottom: 1rem;
+        }
+    }
+}

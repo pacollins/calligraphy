@@ -1,0 +1,22 @@
+progress {
+    width: 100%;
+    height: 5px;
+    color: var(--color-text-link);
+    background-color: transparent;
+    border: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    &::-webkit-progress-bar {
+        background-color: transparent;
+    }
+
+    &::-webkit-progress-value {
+        background-color: var(--color-text-link);
+    }
+
+    &::-moz-progress-bar {
+        background-color: var(--color-text-link);
+    }
+}

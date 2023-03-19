@@ -1,0 +1,51 @@
+@use 'hugo:vars' as *;
+
+:root {
+    /* Type */
+    --font-header: 'Playfair Display', serif;
+    --font-body: 'Source Sans Pro', sans-serif;
+
+    /* Transitions */
+    --transition-base: 0.3s ease-in-out;
+
+    /* Borders */
+    --border-radius-small: 5px;
+    --border-radius-large: 10px;
+
+    /* Global Colors */
+    --color-primary: hsl(180, 100%, 25%);
+    --color-secondary: blue;
+    --color-button: green;
+    --color-text-light: hsl(0, 0%, 91%);
+    --color-text-dark: hsl(0, 0%, 15%);
+
+    /* Light Colors */
+    --color-canvas: hsl(0, 0%, 93%);
+    --color-canvas-tint: hsl(0, 0%, 98%);
+    --color-canvas-shade: hsl(217, 15%, 17%);
+    --color-text: hsl(0, 0%, 15%);
+    --color-text-muted: hsl(0, 0%, 45%);
+    --color-text-inverted: hsl(0, 0%, 91%);
+    --color-text-link: hsl(174, 60%, 42%);
+    --color-ui-float: hsl(0, 0%, 86%);
+    --border-color: hsl(220, 16%, 36%);
+    --image-filter: none;
+}
+
+[data-dark-mode='on'] {
+    /* Dark Colors */
+    --color-canvas: hsl(219, 16%, 17%);
+    --color-canvas-tint: hsl(218, 17%, 26%);
+    --color-canvas-shade: hsl(218, 18%, 9%);
+    --color-text: hsl(0, 0%, 91%);
+    --color-text-muted: hsl(0, 0%, 77%);
+    --color-text-inverted: hsl(0, 0%, 15%);
+    --color-text-link: hsl(174, 60%, 51%);
+    --color-ui-float: hsl(220, 16%, 33%);
+    --border-color: hsl(219, 28%, 88%);
+    --image-filter: grayscale(35%);
+}
+
+[data-animations='off'] * {
+    transition: none !important;
+}

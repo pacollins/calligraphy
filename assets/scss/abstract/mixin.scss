@@ -1,0 +1,10 @@
+@use 'breakpoint' as *;
+
+@mixin break($breakpoint, $limit: min) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        $breakpoint: map-get($breakpoints, $breakpoint);
+    }
+    @media only screen and ($limit+'-width': $breakpoint) {
+        @content;
+    }
+}

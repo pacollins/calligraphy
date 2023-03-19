@@ -1,0 +1,105 @@
+@use "../abstract" as *;
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    list-style: none;
+
+    &__button {
+        display: flex;
+        flex-grow: 1;
+        justify-content: center;
+        align-items: center;
+        max-width: 20%;
+        text-align: center;
+        transition: background-color var(--transition-base),
+            color var(--transition-base);
+
+        &--active,
+        &:hover,
+        &:focus {
+            color: var(--color-text-link);
+            background-color: var(--color-canvas-tint);
+        }
+
+        &--active {
+            cursor: default;
+        }
+
+        &--disabled {
+            color: var(--color-canvas-tint);
+            cursor: not-allowed;
+
+            &:hover,
+            &:focus {
+                color: var(--color-canvas-tint);
+                background-color: inherit;
+            }
+        }
+
+        &--left,
+        &--right {
+            width: calc(50% - 2rem);
+        }
+
+        &--left {
+            text-align: left;
+        }
+
+        &--right {
+            text-align: right;
+        }
+    }
+
+    &__title {
+        display: block;
+        width: 100%;
+        padding: 0.5rem 1rem;
+
+        &::before,
+        &::after {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        &--first::before {
+            content: "««";
+        }
+
+        &--previous::before {
+            content: "«";
+        }
+
+        &--next::after {
+            content: "»";
+        }
+
+        &--last::after {
+            content: "»»";
+        }
+    }
+
+    &__label {
+        display: block;
+        font-size: typeScale(-1);
+        color: var(--color-text-muted);
+        text-transform: uppercase;
+
+        &--previous {
+            &::before {
+                content: "«";
+                margin-right: 0.5rem;
+            }
+        }
+
+        &--next {
+            &::after {
+                content: "»";
+                margin-left: 0.5rem;
+            }
+        }
+    }
+}
