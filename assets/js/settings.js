@@ -10,6 +10,14 @@ const buttons = {
 
 // change setting and update button text and local storage
 function changeButton(type, value, update) {
+    // prevent animation flicker
+    if (type === "dark-mode" && buttons.animations === "on") {
+        document.documentElement.setAttribute("data-animations", "off");
+        setTimeout(() => {
+            document.documentElement.setAttribute("data-animations", "on");
+        }, 300);
+    }
+
   document.documentElement.setAttribute("data-" + type, value);
   document.querySelector("#" + type + "-button-value").innerHTML = value;
   if (update) {localStorage.setItem(type, value);}
