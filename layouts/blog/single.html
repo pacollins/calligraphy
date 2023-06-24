@@ -28,20 +28,20 @@
       {{- $image := (partial "function/author-image" (dict "author" . "size" "200x200 center")) }}
       <a href="{{ $authorPage.Permalink }}" class="author__name"><img src="{{ $image.thumbnail }}" alt="{{ $authorPage.Title }}'s Headshot"  width="50px" height="50px" class="author__headshot">{{ $authorPage.Title }}</a>
     </div>
-  {{- end }}
+    {{- end }}
     {{- end }}   */}}
     {{ partial "function/content.html" . }}
   </div>
 </article>
 {{- end }}
 
-{{- define "sidebar-left" }}
+{{/*  {{- define "sidebar-left" }}
 {{- if .Params.authors}}{{ partialCached "sidebar/authors" . .Params.authors }}{{- end }}
 {{- end }}
 
 {{- define "sidebar-right" }}
   {{ partial "sidebar/toc" . }}
-{{- end }}
+{{- end }}  */}}
 
 {{- define "pagination" }}
   {{ partial "site/pagination" . }}

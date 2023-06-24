@@ -1,11 +1,14 @@
 {{- if .Params.feature }}
 {{- $image := .Params.feature }}
 {{- if not (in .Params.feature "http") }}
-  {{- with .Resources.GetMatch .Params.feature }}
-    {{- $image := .RelPermalink }}
-  {{- end }}
+{{- with .Resources.GetMatch .Params.feature }}
+  {{- $image := . }}
+  {{- $thumbnail = ($image.Fill "1280x400").RelPermalink }}
+{{- else }}
+  {{- $thumbnail = .Params.feature }}
+{{- end }}
 {{- end }}
   <figure class="card__cover">
-    <img src="{{ $image }}" alt="{{ .Params.featureAlt | default .Params.featureCaption | default "A Decorative Image" }}" height="500px"></a>
+    <img src="{{ $image }}" alt="{{ .Params.featureAlt | default .Params.featureCaption | default "A Decorative Image" }}" height="500px">
   </figure>
 {{- end }}

@@ -18,7 +18,7 @@
         </a>
       </li>
       {{ end }}
-    {{- else if .Paginator }}
+    {{- else if gt .Paginator.TotalPages 1 }}
       {{- with .Paginator }}
       {{- $currentPageNumber := .PageNumber }}
 

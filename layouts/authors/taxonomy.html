@@ -1,20 +1,22 @@
 {{- define "main" }}
 <article class="card card--page">
-  {{- $authorPage := site.GetPage "authors" (urlize .Title) }}
-  {{- $image := (partial "function/author-image" (dict "author" .Title "size" "1200x1200 center")) }}
-  <figure class="card__cover card__cover--headshot">
-    <img src="{{ $image.thumbnail }}" alt="{{ .Title }}'s Headshot" height="500">
-  </figure>
-  <div class="card__content card__content--under">
-    <h1 class="card__title card__title--author"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
-    {{ with .Params.assignment }}<span class="card__subtitle">{{ . }}</span>{{ end }}
-    {{ partial "function/content.html" . }}
-    <h2>Articles</h2>
-    <ul>
-      {{- range .Data.Pages }}
-      <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
-      {{- end }}
-    </ul>
-  </div>
+    {{- $authorPage := site.GetPage "authors" (urlize .Title) }} {{- $image := (partial "function/author-image" (dict "author" .Title "size" "1200x1200 center")) }}
+    <figure class="card__cover card__cover--headshot">
+        <img src="{{ $image.thumbnail }}" alt="{{ .Title }}'s Headshot" height="500">
+    </figure>
+    <div class="card__content card__content--under">
+        <h1 class="card__title card__title--author">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </h1>
+        {{ with .Params.assignment }}
+        <p class="card__subtitle">{{ . }}</p>
+        {{ end }} {{ partial "function/content.html" . }}
+        <h2>Articles</h2>
+        <ul>
+            {{- range .Data.Pages }}
+            <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+            {{- end }}
+        </ul>
+    </div>
 </article>
 {{- end }}

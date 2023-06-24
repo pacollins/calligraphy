@@ -5,13 +5,28 @@
     <header class="banner__header" role="banner">
       <div class="banner__brand">
         <a href="/" title="{{ .Site.Params.brand.title }} Home">
-          {{ if .Site.Params.brand.logo }}
-          <img src="{{ .Site.Params.brand.logo }}" alt="{{ .Site.Params.brand.title | default .Site.Title }}" class="brand__logo">
-          {{ else }}
-          {{ .Site.Params.brand.titleFull | default .Site.Title }}
-          {{ end }}
+          <span class="banner__name banner__name--long">
+            {{- if .Site.Params.brand.logo }}
+            <img src="{{ .Site.Params.brand.logo }}" alt="{{ .Site.Params.brand.name | default .Site.Title }}" class="brand__logo">
+            {{- else }}
+            {{ .Site.Params.brand.name | default .Site.Title }}
+            {{- end }}
+          </span>
+          {{/*  <span class="banner__banner banner__name--long">{{ .Site.Params.brand.name | default .Site.Title }}</span>  */}}
+          <span class="banner__name banner__name--short">
+            {{- if .Site.Params.brand.logoShort }}
+            <img src="{{ .Site.Params.brand.logoShort }}" alt="{{ .Site.Params.brand.name | default .Site.Title }}" class="brand__logo">
+            {{- else if .Site.Params.brand.nameShort }}
+            {{ .Site.Params.brand.nameShort | default .Site.Title }}
+            {{- else }}
+            {{ $words := split (.Site.Params.brand.name | default .Site.Title) " " }}
+            {{ range $words }}{{ substr . 0 1 }}{{ end }}
+            {{- end }}
+          </span>
         </a>
-        {{ with .Site.Params.brand.tagline }}<p>{{ . }}</p>{{ end }}  
+        {{- if not .Site.Params.brand.logo }}
+        <p class="banner__tagline">{{ .Site.Params.brand.tagline }}</p>
+        {{- end }}
       </div>
       <button id="nav-toggle" class="banner__nav-toggle" title="Open main site navigation">
         Menu
@@ -30,5 +45,7 @@
       </ul>
     </nav>
   </div>
-  {{ if .IsPage }}<progress id="reading-progress" class="site__progress" max="100" value="0" ></progress>{{ end }}
+  {{- if .IsPage }}
+    <progress id="reading-progress" class="site__progress" max="100" value="0" ></progress>
+  {{- end }}
 </div>

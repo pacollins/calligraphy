@@ -15,13 +15,17 @@
 
 {{- $service := (.Get "service") | default (.Get 0) }}
 {{- if eq $service "netlify" }}
-<form name="contact" method="POST" action="thank-you" data-netlify-recaptcha="true" data-netlify="true">
-  <input type="text" name="name" placeholder="Name" required autofocus>
-  <input type="email" name="_replyto" placeholder="Email" required>
-  <input type="text" name="_subject" placeholder="Subject" required>
-  <textarea name="message" placeholder="Body" required></textarea>
-  <div data-netlify-recaptcha="true"></div>
-  <button type="submit">Submit</button>
-  <button type="reset">Reset</button>
+<form name="contact" data-netlify="true" data-netlify-recaptcha="true" method="POST" action="thank-you">
+    <label for="contact__name">Name</label>
+    <input id="contact__name" name="name" type="text" placeholder="John Doe" required autofocus>
+    <label for="contact__email">Email</label>
+    <input id="contact__email" type="email" placeholder="jdoe@example.com" required>
+    <label for="contact__subject">Subject</label>
+    <input id="contact__subject" name="_subject" type="text" placeholder="Quick Question" required>
+    <label for="contact__message">Message</label>
+    <textarea id="contact__message" name="message" placeholder="Hey, I had a quick question about..." rows="5"></textarea>
+    <div data-netlify-recaptcha="true"></div>
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
 </form>
 {{- end }}
