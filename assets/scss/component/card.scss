@@ -21,6 +21,10 @@
                     height: 100%;
                     min-height: 400px;
                 }
+                
+                + #{$block}__content {
+                    margin: 0;
+                }
             }
 
             #{$block}__content {
@@ -76,6 +80,7 @@
         overflow: hidden;
 
         img {
+            width: 100%;
             min-height: 200px;
             transition: transform 1s;
             object-fit: cover;
@@ -85,23 +90,28 @@
             z-index: 1;
 
             img {
+                width: fit-content;
                 height: 100px;
                 margin: 0;
                 border: 5px solid var(--color-canvas);
                 border-radius: 100%;
             }
         }
+        
+        + #{$block}__content {
+            margin: -3rem 1rem 0 1rem;
+        }
     }
 
     &__content {
         position: relative;
         flex-grow: 1;
-        margin: -3rem 1rem 0 1rem;
-        padding: 2rem;
+        margin-top: minmax(175px, 200px);
+        padding: 3rem clamp(1rem, 5vw, 3rem);
         background-color: var(--color-canvas-tint);
-
+        
         &--under {
-            padding-top: 8rem !important; //TODO: remove this
+            padding-top: 8rem;
         }
     }
 
@@ -125,10 +135,6 @@
         margin-top: 0.5rem;
         line-height: 1;
         word-break: break-word;
-
-        &--author {
-            margin-bottom: 0 !important; //TODO: remove this
-        }
 
         &--term {
             margin: 0;
@@ -168,22 +174,22 @@
         #{$block}__title {
             margin: 1.38rem 0;
             text-align: center;
+            &--author {
+                margin-bottom: typeScale(-1);
+            }
         }
 
         #{$block}__content {
+            box-sizing: border-box;
             max-width: 50rem;
             margin: -8rem 1rem 0;
-            padding: 3rem clamp(1rem, 5vw, 6rem);
 
-            @include break(68rem) {
+            @include break(62rem) {
                 margin: -8rem auto 0;
+                width: 100%;
             }
 
-            h1,
-            h2 {
-                text-align: center;
-            }
-
+            > h2,
             > h3,
             > h4,
             > h5,
@@ -205,28 +211,13 @@
                 margin-right: auto;
                 margin-left: auto;
             }
+            
         }
     }
 
     &--coverless {
         #{$block}__content {
             margin-top: 0;
-        }
-    }
-
-    &--author {
-        flex-direction: row;
-        grid-column: span 12;
-
-        #{$block}__cover {
-            width: 200px;
-            height: 200px;
-        }
-
-        #{$block}__content {
-            height: fit-content;
-            margin: 0;
-            padding: 1.5rem 1rem;
         }
     }
 }

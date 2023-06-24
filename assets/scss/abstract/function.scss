@@ -2,7 +2,7 @@
     @return #{$pixels / $context}rem;
 }
 
-@function typeScale($steps, $units: 'rem', $type-scale: 1.33, $context: 16px) {
+@function typeScale($steps, $units: "rem", $type-scale: 1.33) {
     $font-size: 1;
 
     @if $steps !=0 {
@@ -15,11 +15,11 @@
         }
     }
 
-    @if $units == 'px' {
+    @if $units == "px" {
         $font-size: $font-size * $base-font-size;
     }
 
-    @if $units == '%' {
+    @if $units == "%" {
         $font-size: $font-size * 100;
     }
 

@@ -1,4 +1,4 @@
-@use '../abstract' as *;
+@use "../abstract" as *;
 
 .banner {
     $block: &;
@@ -46,6 +46,7 @@
         flex-grow: 1;
         align-items: center;
         margin-left: 1rem;
+        margin-top: 0;
         font-family: var(--font-header);
         font-variant: small-caps;
         letter-spacing: 7px;
@@ -56,9 +57,14 @@
         }
 
         a {
+            display: flex;
             font-size: typeScale(2);
             line-height: 1;
-
+            @media screen and (max-width: 50rem) {
+                span {
+                    margin-top: -0.25rem;
+                }
+            }
             @media screen and (min-width: 50rem) {
                 font-size: typeScale(4);
             }
@@ -72,8 +78,6 @@
 
     &__name {
         &--long {
-            letter-spacing: 5px;
-
             @media screen and (max-width: 30rem) {
                 display: none;
             }
@@ -85,6 +89,7 @@
 
         &--short {
             display: none;
+            letter-spacing: 0;
 
             @media screen and (max-width: 30rem) {
                 display: block;
@@ -159,7 +164,7 @@
                     background-position: 0 90%, 0 90%, 100% 90%;
                 }
 
-                &[aria-current='page'] {
+                &[aria-current="page"] {
                     @media screen and (min-width: 50rem) {
                         border-bottom: 5px solid var(--color-text-link);
                     }

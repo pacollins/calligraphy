@@ -1,7 +1,7 @@
 +++
 authors = ["John Doe"]
-title = "Placeholder 3"
-date = "2021-03-05"
+title = "Placeholder 6"
+date = "2021-06-11"
 feature = ""
 featureCaption = ""
 tags = ["placeholder"]

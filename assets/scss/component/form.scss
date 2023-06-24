@@ -1,8 +1,8 @@
 label {
-    width: 100vw;
-    max-width: 100%;
+    font-weight: 700;
     display: flex;
-    margin: 1rem 0;
+    max-width: 100%;
+    margin-top: 1rem;
 
     &.stacked {
         flex-direction: column;
@@ -10,13 +10,13 @@ label {
 
     &.inline {
         align-items: baseline;
-        justify-content: flex-end;
 
-        input,
+        input[type="text"],
         textarea,
         select {
-            margin-left: 1rem;
             width: 90%;
+            margin-left: 1rem;
+            justify-self: flex-end;
         }
     }
 }
@@ -26,8 +26,8 @@ select,
 textarea {
     box-sizing: border-box;
     width: 100%;
-    margin: 0.5rem 0;
-    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
     border: 1px solid var(--border-color);
     transition: border-color var(--transition-base),
         box-shadow var(--transition-base);
@@ -148,8 +148,8 @@ select {
 }
 
 textarea {
-    line-height: 1.5;
     min-height: 8rem;
+    line-height: 1.5;
     resize: vertical;
 
     &:disabled {

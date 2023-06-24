@@ -14,7 +14,7 @@ tags = [
   "portfolio",
   "news"
 ]
-min_version = "0.89.1 extended"
+min_version = "0.111.1 extended"
 
 [author]
   name = "Patrick Collins"

@@ -1,4 +1,4 @@
-@use '../abstract' as *;
+@use "../abstract" as *;
 
 html {
     font-size: rem(16px);
@@ -13,6 +13,7 @@ body {
     font-family: var(--font-body);
     color: var(--color-text);
     background-color: var(--color-canvas);
+    margin: 0;
 }
 
 h1,
@@ -20,43 +21,61 @@ h2,
 h3,
 h4,
 h5 {
-    font-weight: 700;
     line-height: 1.3;
     font-family: var(--font-header);
-    scroll-margin-top: 4rem;
-
     code {
         font-size: typeScale(-1, em);
     }
 }
 
 h1,
+.h1,
+h2,
+.h2 {
+    font-weight: 400;
+}
+
+h1,
 .h1 {
-    margin: 3rem 0 1.38rem 0;
+    margin-top: typeScale(3);
+    margin-bottom: typeScale(0);
     font-size: typeScale(4);
+    letter-spacing: -1.5px;
 }
 
 h2,
 .h2 {
-    margin: 2rem 0 1rem 0;
-    margin-bottom: 1rem;
+    margin-top: typeScale(2);
+    margin-bottom: typeScale(-1);
     font-size: typeScale(3);
+    letter-spacing: -1px;
+}
+
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5 {
+    font-weight: 700;
 }
 
 h3,
 .h3 {
-    margin: 2rem 0 1rem 0;
+    margin-top: typeScale(1);
+    margin-bottom: typeScale(-2);
     font-size: typeScale(2);
-    font-style: italic;
+    letter-spacing: 1px;
 }
 
 h4,
 .h4,
 h5,
 .h5 {
-    margin: 1.5rem 0 0.75rem 0;
-    font-weight: 400;
+    margin-top: typeScale(0);
+    margin-bottom: typeScale(-3);
     font-size: typeScale(1);
+    letter-spacing: 1.5px;
 }
 
 h5,
@@ -100,7 +119,7 @@ hr {
     border: 0;
 
     &:before {
-        content: '';
+        content: "";
         position: absolute;
         top: -6px;
         left: 50%;
@@ -156,7 +175,7 @@ cite {
     text-align: right;
 
     &::before {
-        content: '—';
+        content: "—";
         margin-right: 0.5rem;
     }
 }

@@ -1,12 +1,15 @@
-@use '../abstract' as *;
+@use "../abstract" as *;
 
 .l-grid {
     display: grid;
+    box-sizing: border-box;
+    width: 100%;
     max-width: 74rem;
     margin: 3rem auto;
     padding: 0 1rem;
     row-gap: 2rem;
     grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: min-content;
 
     @include break(54rem) {
         column-gap: 2rem;

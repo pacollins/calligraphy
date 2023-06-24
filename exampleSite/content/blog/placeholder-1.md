@@ -1,12 +1,12 @@
 +++
 authors = ["John Doe"]
 title = "Placeholder 1"
-date = "2021-01-04"
+date = "2021-01-01"
 feature = ""
 featureCaption = ""
-tags = [""]
+tags = ["placeholder"]
 categories = ["fluff"]
 series = ""
 +++
 
-Placeholder #1 to demonstrate pagination.
+Placeholder to demonstrate pagination.

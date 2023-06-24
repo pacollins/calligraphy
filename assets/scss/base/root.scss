@@ -1,9 +1,9 @@
-@use 'hugo:vars' as *;
+@use "hugo:vars" as *;
 
 :root {
     /* Type */
-    --font-header: 'Playfair Display', serif;
-    --font-body: 'Source Sans Pro', sans-serif;
+    --font-header: "Playfair Display", serif;
+    --font-body: "Source Sans Pro", sans-serif;
 
     /* Transitions */
     --transition-base: 0.3s ease-in-out;
@@ -14,6 +14,8 @@
 
     /* Global Colors */
     --color-primary: hsl(180, 100%, 25%);
+    --color-primary-tint: hsl(174, 60%, 85%);
+    --color-primary-shade: hsl(180, 100%, 15%);
     --color-secondary: blue;
     --color-button: green;
     --color-text-light: hsl(0, 0%, 91%);
@@ -32,7 +34,7 @@
     --image-filter: none;
 }
 
-[data-dark-mode='on'] {
+[data-dark-mode="on"] {
     /* Dark Colors */
     --color-canvas: hsl(219, 16%, 17%);
     --color-canvas-tint: hsl(218, 17%, 26%);
@@ -46,6 +48,6 @@
     --image-filter: grayscale(35%);
 }
 
-[data-animations='off'] * {
+[data-animations="off"] * {
     transition: none !important;
 }

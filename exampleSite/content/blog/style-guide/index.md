@@ -27,17 +27,55 @@ Use `#` to notate which heading level to use.
 
 ```markdown
 # H1
+
 ## H2
+
 ### H3
+
 #### H4
+
 ##### H5
 ```
 
-# H1 {.js-toc-ignore}
-## H2 {.js-toc-ignore}
-### H3 {.js-toc-ignore}
-#### H4 {.js-toc-ignore}
-##### H5 {.js-toc-ignore}
+# Heading 1
+
+Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum,
+voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma
+dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as
+cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin
+porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur?
+
+## Heading 2
+
+Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum,
+voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma
+dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as
+cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin
+porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur?
+
+### Heading 3
+
+Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum,
+voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma
+dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as
+cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin
+porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur?
+
+#### Heading 4
+
+Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum,
+voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma
+dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as
+cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin
+porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur?
+
+##### Heading 5
+
+Xerum, quo qui aut unt expliquam qui dolut labo. Aque venitatiusda cum,
+voluptionse latur sitiae dolessi aut parist aut dollo enim qui voluptate ma
+dolestendit peritin re plis aut quas inctum laceat est volestemque commosa as
+cus endigna tectur, offic to cor sequas etum rerum idem sintibus eiur? Quianimin
+porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur?
 
 ## Horizontal Rule
 
@@ -80,9 +118,9 @@ This is **strong** text.
 
 This is [**strong**](#text-level-semantics) text as a link.
 
-This is *emphasized* text.
+This is _emphasized_ text.
 
-This is [*emphasized*](#text-level-semantics) text as a link.
+This is [_emphasized_](#text-level-semantics) text as a link.
 
 This is `code` text.
 
@@ -111,9 +149,9 @@ This is **strong** text.
 
 This is [**strong**](#text-level-semantics) text as a link.
 
-This is *emphasized* text.
+This is _emphasized_ text.
 
-This is [*emphasized*](#text-level-semantics) text as a link.
+This is [_emphasized_](#text-level-semantics) text as a link.
 
 This is `code` text.
 
@@ -143,7 +181,7 @@ This is a key bind. <kbd>ALT</kbd>+<kbd>F4</kbd>
 
 Use numbers followed by `.` or `)` to notate an ordered list. Ordered lists can start at any number, which allows them to continue even when separated.
 
-*Special Note:* Even if you have a mistake in your numbering, your list will continue to count up by 1 each time.
+_Special Note:_ Even if you have a mistake in your numbering, your list will continue to count up by 1 each time.
 
 ```markdown
 1. First item
@@ -153,8 +191,8 @@ Use numbers followed by `.` or `)` to notate an ordered list. Ordered lists can 
 Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur?
 
 4. Fourth item on continued list
-4. Fifth Item with incorrect numbering
-4. Sixth Item with incorrect numbering
+5. Fifth Item with incorrect numbering
+6. Sixth Item with incorrect numbering
 ```
 
 1. First item
@@ -164,28 +202,28 @@ Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatu
 Quianimin porecus evelectur, cum que nis nust voloribus ratem aut omnimi, sitatur?
 
 4. Fourth item on continued list
-4. Fifth Item with incorrect numbering
-4. Sixth Item with incorrect numbering
+5. Fifth Item with incorrect numbering
+6. Sixth Item with incorrect numbering
 
 ### Unordered
 
 Use either `-` or `*` to notate an unordered list.
 
 ```markdown
-- List item with a hyphen
-- Another item with a hyphen
+-   List item with a hyphen
+-   Another item with a hyphen
 
-* List item with an asterisk
-* Another item with an asterisk
-* and another item with an asterisk
+*   List item with an asterisk
+*   Another item with an asterisk
+*   and another item with an asterisk
 ```
 
-- List item with a hyphen
-- Another item with a hyphen
+-   List item with a hyphen
+-   Another item with a hyphen
 
-* List item with an asterisk
-* Another item with an asterisk
-* and another item with an asterisk
+*   List item with an asterisk
+*   Another item with an asterisk
+*   and another item with an asterisk
 
 ### Multilevel
 
@@ -193,23 +231,23 @@ Use four spaces to notate the hierarchy and create a multilevel list. List types
 
 ```markdown
 1. Goal 1
-    * Task 1
-    * Task 2
-    * Task 3
+    - Task 1
+    - Task 2
+    - Task 3
 2. Goal 2
-    * Task 1
-    * Task 2
-        * Subtask 1
+    - Task 1
+    - Task 2
+        - Subtask 1
 ```
 
 1. Goal 1
-    * Task 1
-    * Task 2
-    * Task 3
+    - Task 1
+    - Task 2
+    - Task 3
 2. Goal 2
-    * Task 1
-    * Task 2
-        * Subtask 1
+    - Task 1
+    - Task 2
+        - Subtask 1
 
 ### Definition
 
@@ -241,36 +279,35 @@ Second Term
 : This is one definition of the second term.
 : This is another definition of the second term.
 
-
 ## Blockquote
 
 Use `>` to notate a blockquote. Add additional `>` to new lines preserve line breaks and continue the blockquote. Add the `cite` tag to add attribution to the quote.
 
 ```markdown
->To all who come to this happy place; welcome. Disneyland is your land. Here age
-relives fond memories of the past… and here youth may savor the challenge and
-promise of the future. Disneyland is dedicated to the ideals, the dreams and the
-hard facts that have created America… with the hope that it will be a source of
-joy and inspiration to all the world.
+> To all who come to this happy place; welcome. Disneyland is your land. Here age
+> relives fond memories of the past… and here youth may savor the challenge and
+> promise of the future. Disneyland is dedicated to the ideals, the dreams and the
+> hard facts that have created America… with the hope that it will be a source of
+> joy and inspiration to all the world.
 
 > Why worry?
 >
 > If you’ve done the very best you can, worrying won’t make it any
-better.
-<cite>Walt Disney</cite>
+> better.
+> <cite>Walt Disney</cite>
 ```
 
->To all who come to this happy place; welcome. Disneyland is your land. Here age
-relives fond memories of the past… and here youth may savor the challenge and
-promise of the future. Disneyland is dedicated to the ideals, the dreams and the
-hard facts that have created America… with the hope that it will be a source of
-joy and inspiration to all the world.
+> To all who come to this happy place; welcome. Disneyland is your land. Here age
+> relives fond memories of the past… and here youth may savor the challenge and
+> promise of the future. Disneyland is dedicated to the ideals, the dreams and the
+> hard facts that have created America… with the hope that it will be a source of
+> joy and inspiration to all the world.
 
 > Why worry?
 >
 > If you’ve done the very best you can, worrying won’t make it any
-better.
-<cite>Walt Disney</cite>
+> better.
+> <cite>Walt Disney</cite>
 
 ## Details Disclosure
 
@@ -342,29 +379,29 @@ Use <code>```</code> on either side of code block to notate it. Add the language
 
 ````markdown
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Example HTML5 Document</title>
-</head>
-<body>
-  <p>Test</p>
-</body>
+    <head>
+        <meta charset="utf-8" />
+        <title>Example HTML5 Document</title>
+    </head>
+    <body>
+        <p>Test</p>
+    </body>
 </html>
 ```
 ````
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <title>Example HTML5 Document</title>
-</head>
-<body>
-  <p>Test</p>
-</body>
+    <head>
+        <meta charset="utf-8" />
+        <title>Example HTML5 Document</title>
+    </head>
+    <body>
+        <p>Test</p>
+    </body>
 </html>
 ```
 
@@ -373,18 +410,19 @@ Use <code>```</code> on either side of code block to notate it. Add the language
 Tables in Markdown can take a while to get used to. It is recommended to find a Markdown table generator online and use it until you get the hang of the more complex notation.
 
 ```markdown
-| Bill       | January | February | March | April |  May |
-|------------|:-------:|:--------:|:-----:|:-----:|:----:|
-| Eletricity |     $92 |      $88 |   $97 |  $102 | $108 |
-| Water      |     $60 |      $88 |   $73 |   $70 |  $74 |
-| Groceries  |    $250 |     $284 |  $228 |  $334 | $305 |
+| Bill       | January | February | March | April | May  |
+| ---------- | :-----: | :------: | :---: | :---: | :--: |
+| Eletricity |   $92   |   $88    |  $97  | $102  | $108 |
+| Water      |   $60   |   $88    |  $73  |  $70  | $74  |
+| Groceries  |  $250   |   $284   | $228  | $334  | $305 |
 ```
 
-| Bill       | January | February | March | April |  May |
-|------------|:-------:|:--------:|:-----:|:-----:|:----:|
-| Eletricity |     $92 |      $88 |   $97 |  $102 | $108 |
-| Water      |     $60 |      $88 |   $73 |   $70 |  $74 |
-| Groceries  |    $250 |     $284 |  $228 |  $334 | $305 |
+| Bill       | January | February | March | April | May  |
+| ---------- | :-----: | :------: | :---: | :---: | :--: |
+| Eletricity |   $92   |   $88    |  $97  | $102  | $108 |
+| Water      |   $60   |   $88    |  $73  |  $70  | $74  |
+| Groceries  |  $250   |   $284   | $228  | $334  | $305 |
+
 {tabindex="0"}
 
 ### Variable Width
@@ -392,40 +430,43 @@ Tables in Markdown can take a while to get used to. It is recommended to find a 
 Tables that overflow the content container will maintain their formatting and provide a scrollbar for navigation.
 
 ```markdown
-|    Bill    | January | February | March | April |  May | June | July | August | September | October | November | December |
-|------------|--------:|---------:|------:|------:|-----:|-----:|-----:|-------:|----------:|--------:|---------:|---------:|
-| Eletricity |     $92 |      $88 |   $97 |  $102 | $108 | $112 | $140 | $135   | $124      | $110    | $108     | $98      |
-|    Water   |     $60 |      $88 |   $73 |   $70 |  $74 | $76  | $72  | $80    | $85       | $76     | $68      | $72      |
-|  Groceries |    $250 |     $284 |  $228 |  $334 | $305 | $320 | $280 | $287   | $400      | $178    | $182     | $284     |
+| Bill       | January | February | March | April |  May | June | July | August | September | October | November | December |
+| ---------- | ------: | -------: | ----: | ----: | ---: | ---: | ---: | -----: | --------: | ------: | -------: | -------: |
+| Eletricity |     $92 |      $88 |   $97 |  $102 | $108 | $112 | $140 |   $135 |      $124 |    $110 |     $108 |      $98 |
+| Water      |     $60 |      $88 |   $73 |   $70 |  $74 |  $76 |  $72 |    $80 |       $85 |     $76 |      $68 |      $72 |
+| Groceries  |    $250 |     $284 |  $228 |  $334 | $305 | $320 | $280 |   $287 |      $400 |    $178 |     $182 |     $284 |
 ```
 
-|    Bill    | January | February | March | April |  May | June | July | August | September | October | November | December |
-|------------|--------:|---------:|------:|------:|-----:|-----:|-----:|-------:|----------:|--------:|---------:|---------:|
-| Eletricity |     $92 |      $88 |   $97 |  $102 | $108 | $112 | $140 | $135   | $124      | $110    | $108     | $98      |
-|    Water   |     $60 |      $88 |   $73 |   $70 |  $74 | $76  | $72  | $80    | $85       | $76     | $68      | $72      |
-|  Groceries |    $250 |     $284 |  $228 |  $334 | $305 | $320 | $280 | $287   | $400      | $178    | $182     | $284     |
+| Bill       | January | February | March | April |  May | June | July | August | September | October | November | December |
+| ---------- | ------: | -------: | ----: | ----: | ---: | ---: | ---: | -----: | --------: | ------: | -------: | -------: |
+| Eletricity |     $92 |      $88 |   $97 |  $102 | $108 | $112 | $140 |   $135 |      $124 |    $110 |     $108 |      $98 |
+| Water      |     $60 |      $88 |   $73 |   $70 |  $74 |  $76 |  $72 |    $80 |       $85 |     $76 |      $68 |      $72 |
+| Groceries  |    $250 |     $284 |  $228 |  $334 | $305 | $320 | $280 |   $287 |      $400 |    $178 |     $182 |     $284 |
+
 {tabindex="0"}
 
 ### Fixed Width
 
 For tables that are better served by fitting the width of the container and wrapping text, add `{.white-space-normal}` after the Markdown notation. This is possible because the theme has [custom attribute support](https://gohugo.io/getting-started/configuration-markup#goldmark) enable.
 
-*Special Note:* The Markdown table notation doesn't have to look pretty to work.
+_Special Note:_ The Markdown table notation doesn't have to look pretty to work.
 
 ```markdown
-| You Say... | You Could Say... | Why? |
-|---|---|---|
-| Good job! | I can really see your effort in revision. | Praising effort and process encourages writers to keep trying. (Dweck) |
-| You're a good writer! | Those drafts paid off in sentence variety and imagery. | Encouraging growth instead of fixed mindset makes for happier people in charge of their progress. (Dweck) |
-| You don't know how to use semicolons. | You haven't mastered semicolons **yet**. | The power of **yet** suggests growth and mastery. (Dweck and Pink) |
+| You Say...                            | You Could Say...                                       | Why?                                                                                                      |
+| ------------------------------------- | ------------------------------------------------------ | --------------------------------------------------------------------------------------------------------- |
+| Good job!                             | I can really see your effort in revision.              | Praising effort and process encourages writers to keep trying. (Dweck)                                    |
+| You're a good writer!                 | Those drafts paid off in sentence variety and imagery. | Encouraging growth instead of fixed mindset makes for happier people in charge of their progress. (Dweck) |
+| You don't know how to use semicolons. | You haven't mastered semicolons **yet**.               | The power of **yet** suggests growth and mastery. (Dweck and Pink)                                        |
+
 {.white-space-normal}
 ```
 
-| You Say... | You Could Say... | Why? |
-|---|---|---|
-| Good job! | I can really see your effort in revision. | Praising effort and process encourages writers to keep trying. (Dweck) |
-| You're a good writer! | Those drafts paid off in sentence variety and imagery. | Encouraging growth instead of fixed mindset makes for happier people in charge of their progress. (Dweck) |
-| You don't know how to use semicolons. | You haven't mastered semicolons **yet**. | The power of **yet** suggests growth and mastery. (Dweck and Pink) |
+| You Say...                            | You Could Say...                                       | Why?                                                                                                      |
+| ------------------------------------- | ------------------------------------------------------ | --------------------------------------------------------------------------------------------------------- |
+| Good job!                             | I can really see your effort in revision.              | Praising effort and process encourages writers to keep trying. (Dweck)                                    |
+| You're a good writer!                 | Those drafts paid off in sentence variety and imagery. | Encouraging growth instead of fixed mindset makes for happier people in charge of their progress. (Dweck) |
+| You don't know how to use semicolons. | You haven't mastered semicolons **yet**.               | The power of **yet** suggests growth and mastery. (Dweck and Pink)                                        |
+
 {.white-space-normal}
 
 ## Media Elements
