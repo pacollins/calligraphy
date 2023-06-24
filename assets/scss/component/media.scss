@@ -1,5 +1,35 @@
+@use "../abstract" as *;
+
+figure {
+    margin: 0;
+    text-align: center;
+
+    > a,
+    a:hover {
+        background: none;
+    }
+}
+
+figcaption {
+    max-width: 60ch;
+    margin: 0 auto;
+    padding: 0 2rem;
+    font-size: typeScale(-1);
+    text-align: center;
+    opacity: 0.75;
+}
+
+img {
+    height: auto;
+    width: 100%;
+
+    &:not([src*=".svg"]) {
+        filter: var(--image-filter);
+    }
+}
+
 video {
-    max-width: 100%;
+    width: 100%;
 }
 
 audio {
