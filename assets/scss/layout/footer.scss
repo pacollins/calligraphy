@@ -1,7 +1,7 @@
 @use "../abstract" as *;
 
 .footer {
-    font-size: typeScale(-1, em);
+    font-size: typeScale(1, down, em);
     color: var(--color-text);
     background-color: var(--color-canvas-tint);
 

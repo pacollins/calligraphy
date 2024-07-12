@@ -2,15 +2,17 @@
     @return #{$pixels / $context}rem;
 }
 
-@function typeScale($steps, $units: "rem", $type-scale: 1.33) {
+@function typeScale($steps, $direction: "up", $units: "rem", $type-scale: 1.33) {
     $font-size: 1;
 
     @if $steps !=0 {
         @for $i from 1 through abs($steps) {
-            @if $steps + 1>0 {
+            @if $direction == "up" {
                 $font-size: $font-size * $type-scale;
-            } @else {
+            } @else if $direction == "down" {
                 $font-size: $font-size / $type-scale;
+            } @else {
+                @error "Incorrect scaling direction.";
             }
         }
     }
@@ -21,6 +23,10 @@
 
     @if $units == "%" {
         $font-size: $font-size * 100;
+    }
+
+    @if $steps+1<0 {
+        $font-size: $font-size * -1;
     }
 
     @return unquote($font-size + $units);

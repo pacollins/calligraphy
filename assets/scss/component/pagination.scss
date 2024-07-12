@@ -84,7 +84,7 @@
 
     &__label {
         display: block;
-        font-size: typeScale(-1);
+        font-size: typeScale(1, down);
         color: var(--color-text-muted);
         text-transform: uppercase;
 

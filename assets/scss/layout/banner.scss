@@ -110,7 +110,7 @@
     &__nav-toggle {
         width: 5rem;
         margin: 0;
-        font-size: typeScale(-1);
+        font-size: typeScale(1, down);
         text-align: center;
         text-transform: uppercase;
         background-color: var(--color-ui-float);
@@ -154,7 +154,7 @@
 
                 @media screen and (min-width: 50rem) {
                     padding: 0.5rem 2rem;
-                    font-size: typeScale(-1);
+                    font-size: typeScale(1, down);
                 }
 
                 a {

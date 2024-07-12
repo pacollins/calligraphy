@@ -14,7 +14,7 @@ figcaption {
     max-width: 60ch;
     margin: 0 auto;
     padding: 0 2rem;
-    font-size: typeScale(-1);
+    font-size: typeScale(1, down);
     text-align: center;
     opacity: 0.75;
 }

@@ -49,8 +49,8 @@
         }
 
         &--additional {
-            font-size: typeScale(-1);
             grid-column: span 4;
+            font-size: typeScale(1, down);
 
             #{$block}__cover {
                 img {
