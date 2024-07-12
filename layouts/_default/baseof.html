@@ -92,12 +92,12 @@
   {{ end }}
 
   <main id="site-main" class="site__main l-grid" role="main">
-
     {{ block "main" . }}{{ end }}
     {{ block "sidebar-left" . }}{{ end }}
     {{ block "sidebar-right" . }}{{ end }}
     {{ block "pagination" . }}{{ end }}
   </main>
+  
   {{ block "footer" . }}{{ partialCached "site/footer.html" . }}{{ end }}
 
 </body>

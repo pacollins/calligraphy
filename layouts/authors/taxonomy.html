@@ -5,12 +5,12 @@
         <img src="{{ $image.thumbnail }}" alt="{{ .Title }}'s Headshot" height="500">
     </figure>
     <div class="card__content card__content--under">
-        <h1 class="card__title card__title--author">
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-        </h1>
-        {{ with .Params.assignment }}
-        <p class="card__subtitle">{{ . }}</p>
-        {{ end }} {{ partial "function/content.html" . }}
+        <div class="card__header">
+            <h1 class="card__title card__title--author"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
+            {{ with .Params.assignment }}<span class="card__subtitle">{{ . }}</span>{{ end }}
+        </div>
+        <hr>
+        {{ partial "function/content.html" . }}
         <h2>Articles</h2>
         <ul>
             {{- range .Data.Pages }}

@@ -13,7 +13,7 @@
     --border-radius-large: 10px;
 
     /* Global Colors */
-    --color-primary: hsl(180, 100%, 25%);
+    --color-primary: hsl(180, 100%, 35%);
     --color-primary-tint: hsl(174, 60%, 85%);
     --color-primary-shade: hsl(180, 100%, 15%);
     --color-secondary: blue;
@@ -36,13 +36,14 @@
 
 [data-dark-mode="on"] {
     /* Dark Colors */
+    --color-primary: hsl(180, 100%, 35%);
     --color-canvas: hsl(219, 16%, 17%);
     --color-canvas-tint: hsl(218, 17%, 26%);
     --color-canvas-shade: hsl(218, 18%, 9%);
     --color-text: hsl(0, 0%, 91%);
     --color-text-muted: hsl(0, 0%, 77%);
     --color-text-inverted: hsl(0, 0%, 15%);
-    --color-text-link: hsl(174, 60%, 51%);
+    --color-text-link: hsl(174, 60%, 55%);
     --color-ui-float: hsl(220, 16%, 33%);
     --border-color: hsl(219, 28%, 88%);
     --image-filter: grayscale(35%);

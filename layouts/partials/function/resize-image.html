@@ -1,0 +1,20 @@
+{{- $thumbnail := .Params.feature }}
+{{- if not (in .Params.feature "http") }}
+    {{- with .Resources.GetMatch .Params.feature }}
+        {{- $image := . }}
+        {{- $processing := $.Scratch.Get "processing" }}
+        {{- $size := $.Scratch.Get "size" }}
+        {{ if eq $processing "resize" }}
+            {{- $thumbnail = ($image.Resize $size ).RelPermalink }}
+        {{- else if eq $processing "fit" }}
+            {{- $thumbnail = ($image.Fit $size ).RelPermalink }}
+        {{- else if eq $processing "crop" }}
+            {{- $thumbnail = ($image.Crop $size ).RelPermalink }}
+        {{- else }}
+            {{- $thumbnail = ($image.Fill $size ).RelPermalink }}
+        {{- end }}
+    {{- else }}
+        {{- $thumbnail = .Params.feature }}
+    {{- end }}
+{{- end }}
+{{- return $thumbnail }}
