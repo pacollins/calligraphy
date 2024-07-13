@@ -6,3 +6,15 @@
     </div>
 </article>
 {{- end }}
+
+{{- define "aside-left" }}
+{{- if .Params.authors}}{{ partialCached "aside/authors" . .Params.authors }}{{- end }}
+{{- end }}
+
+{{- define "aside-right" }}
+  {{ partial "aside/toc" . }}
+{{- end }}
+
+{{- define "pagination" }}
+  {{ partial "pagination" . }}
+{{- end }}
