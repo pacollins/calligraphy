@@ -80,7 +80,5 @@ This theme is released under the [MIT License](https://github.com/pacollins/call
 
 ## Special Thanks
 
-- [normalize.css](https://github.com/necolas/normalize.css/)
-- [tocbot](https://github.com/tscanlin/tocbot)
 - [Playfair Display Font](https://fonts.google.com/specimen/Playfair+Display)
 - [Source Sans Pro Font](https://fonts.google.com/specimen/Source+Sans+Pro)

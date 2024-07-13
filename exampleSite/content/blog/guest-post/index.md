@@ -1,15 +1,12 @@
 +++
-authors = ["John Doe"]
+authors = ["Calligraphy Authors", "Hugo Authors"]
 title = "Guest Post"
+subtitle = ""
+description = ""
 date = "2021-12-31"
-feature = "calligraphy-wolf.jpg"
-featureCaption = "Photo of Writing in Calligraphy by Katya Wolf from Pexels"
-tags = [
-  "lorem",
-  "ipsum"
-]
-categories = ["fluff"]
-series = ""
+feature = "nib-pixabay.jpg"
+featureCaption = "Photo of Nib by Pixabay from Pexels"
+series = "Theme Guides"
 +++
 
 Lorem est tota propiore conpellat pectoribus de

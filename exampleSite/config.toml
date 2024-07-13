@@ -38,12 +38,6 @@ enableEmoji = true
   weight = 20
 
 [[menu.main]]
-  identifier = "authors"
-  name = "Authors"
-  url = "/authors/"
-  weight = 30
-
-[[menu.main]]
   identifier = "series"
   name = "Series"
   url = "/series/"
@@ -61,7 +55,7 @@ enableEmoji = true
 ################################################################################
 
 [outputs]
-  home = ["html", "rss", "json"]
+  home = ["html", "rss"]
 
 [taxonomies]
   author = "authors"

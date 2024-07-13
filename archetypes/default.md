@@ -1,10 +1,14 @@
 +++
 authors = [""]
 title = ""
+subtitle = ""
+description = ""
 date = ""
 feature = ""
 featureCaption = ""
-tags = [""]
-categories = [""]
 series = ""
 +++
+
+[Article - Opening]
+<!--more-->
+[Article - Extended]

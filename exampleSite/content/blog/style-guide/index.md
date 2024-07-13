@@ -1,19 +1,11 @@
 +++
 authors = ["Calligraphy Authors", "Hugo Authors"]
 title = "Style Guide"
+subtitle = ""
+description = ""
 date = "2022-01-03"
 feature = "inkwell-roma.jpg"
 featureCaption = "Photo of an Inkwell by Angela Roma from Pexels"
-tags = [
-    "markdown",
-    "css",
-    "html",
-    "styles"
-]
-categories = [
-    "theme",
-    "syntax"
-]
 series = "Theme Guides"
 +++
 

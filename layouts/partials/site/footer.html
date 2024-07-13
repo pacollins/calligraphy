@@ -22,7 +22,7 @@
 {{- if .Site.Params.cdn }}
 {{- range .Site.Params.Library }}
 {{- if and (eq .type "script") .global }}
-<link rel="stylesheet" href="{{ .path }}">
+<script type="text/javascript" src="{{ .path }}"></script>
 {{- end }}
 {{- end }}
 {{- else }}

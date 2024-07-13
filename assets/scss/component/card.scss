@@ -5,7 +5,7 @@
     display: flex;
     flex-direction: column;
     grid-column: span 12;
-
+    
     @include break(54rem) {
         grid-column: span 6;
         
@@ -27,7 +27,7 @@
 
                 img {
                     height: 100%;
-                    min-height: 500px;
+                    max-height: 500px;
                 }
                 
                 + #{$block}__content {
@@ -76,6 +76,9 @@
     }
 
     &:not(#{$block}--page) {
+        #{$block}__content {
+            justify-self: center;
+        }
         &:hover {
             #{$block}__cover {
                 img {
@@ -95,6 +98,7 @@
             object-fit: cover;
             background-size: cover;
             background-position: center;
+            vertical-align: bottom;
         }
 
         &--headshot {
@@ -115,10 +119,6 @@
         margin: typeScale(-6, up, em) typeScale(1, up, em) 0;
         padding: typeScale(2, up, em) clamp(#{typeScale(1, up, em)}, 5vw, #{typeScale(4, up, em)});
         background-color: var(--color-canvas-tint);
-        
-        &--under {
-            padding-top: typeScale(6);
-        }
     }
 
     &__header {
@@ -131,6 +131,8 @@
         font-weight: bold;
         color: var(--color-primary);
         margin-bottom: typeScale(2, down);
+        width: fit-content;
+        align-self: center;
     }
 
     &__title {
@@ -185,6 +187,12 @@
         #{$block}__content {
             box-sizing: border-box;
             max-width: 50rem;
+            margin-top: typeScale(-8, up, em);
+       
+            &--under {
+                padding-top: typeScale(7);
+                margin-top: typeScale(-6);
+            }
 
             @include break(62rem) {
                 margin-bottom: 0;

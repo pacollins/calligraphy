@@ -1,14 +1,32 @@
 [build]
-  base = "exampleSite"
-  publish = "public"
-  command = "hugo --gc --themesDir ../.."
-
-[context.production.environment]
-  HUGO_THEME = "repo"
-  HUGO_ENV = "production"
+    publish = "exampleSite/public"
+    command = """\
+            curl -LJO https://github.com/sass/dart-sass/releases/download/${DART_SASS_VERSION}/dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz && \
+            tar -xf dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz && \
+            rm dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz && \
+            export PATH=/opt/build/repo/dart-sass:$PATH && \
+            hugo --gc --source exampleSite --themesDir /opt/build \
+            """
 
 [context.deploy-preview]
-  command = "hugo --gc --buildFuture --themesDir ../.."
+    command = """\
+            curl -LJO https://github.com/sass/dart-sass/releases/download/${DART_SASS_VERSION}/dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz && \
+            tar -xf dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz && \
+            rm dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz && \
+            export PATH=/opt/build/repo/dart-sass:$PATH && \
+            hugo --gc --buildFuture --source exampleSite --themesDir /opt/build \
+            """
 
 [context.branch-deploy]
-  command = "hugo --gc --buildFuture --themesDir ../.."
+    command = """\
+        curl -LJO https://github.com/sass/dart-sass/releases/download/${DART_SASS_VERSION}/dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz && \
+        tar -xf dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz && \
+        rm dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz && \
+        export PATH=/opt/build/repo/dart-sass:$PATH && \
+        hugo --gc --buildFuture --source exampleSite --themesDir /opt/build \
+        """
+
+[build.environment]
+    HUGO_THEME = "repo"
+    HUGO_VERSION = "0.128.2"
+    DART_SASS_VERSION = "1.77.8"

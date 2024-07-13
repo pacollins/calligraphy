@@ -7,7 +7,7 @@
 </div>
 {{ $counter := 0 }}
 {{- range .Paginator.Pages }}
-<article class="card{{ if eq $counter 0 }} card--featured{{ else if gt $counter 2 }} card--additional{{ end }}">
+<article class="card{{ if eq $counter 0 }} card--featured{{ else if gt $counter 2 }} card--additional{{ end }}{{ if not .Params.feature }} card--coverless{{ end }}">
     {{- if .Params.feature }}
         {{ .Scratch.Set "processing" "resize" }}
         {{ .Scratch.Set "size" "x1000" }}
