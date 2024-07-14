@@ -35,7 +35,7 @@
   {{- end }}
 
   {{- with (.Params.keywords | default .Params.tags | default .Site.Params.keywords) }}<meta name="keywords" content="{{ delimit . ", " }}">{{- end }}
-  {{- with .Params.Authors }}<meta name="author" content="{{ delimit . ", " }}">{{- end }}
+  {{- with .Params.authors }}<meta name="author" content="{{ delimit . ", " }}">{{- end }}
   <meta name="og:title" content="{{ .Title | default .Site.Title }}">
   <meta name="og:description" content="{{ $description }}">
   <meta name="og:type" content="{{ cond .IsHome "website" "article" }}">

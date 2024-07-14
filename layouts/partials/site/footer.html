@@ -20,7 +20,7 @@
 
 {{- $main := resources.Match "js/*.js" | resources.Concat "js/main.js" }}
 {{- if .Site.Params.cdn }}
-{{- range .Site.Params.Library }}
+{{- range .Site.Params.library }}
 {{- if and (eq .type "script") .global }}
 <script type="text/javascript" src="{{ .path }}"></script>
 {{- end }}

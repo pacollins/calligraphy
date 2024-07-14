@@ -10,11 +10,11 @@
     {{- end }}
   <div class="card__content">
     <div class="card__header">
-        {{ with .Params.Series }}<a href="/series/{{ . | urlize }}" class="card__series" data-taxonomy="{{ print "series-" . | urlize }}">{{ . }}</a>{{ end }}
+        {{ with .Params.series }}<a href="/series/{{ . | urlize }}" class="card__series" data-taxonomy="{{ print "series-" . | urlize }}">{{ . }}</a>{{ end }}
         <h1 class="card__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
-        {{/*  <span class="card__subtitle">This is an example of a subtitle.</span>  */}}
+        {{ with .Params.subtitle }}<span class="card__subtitle">{{ . }}</span>{{ end }}
         <div class="card__meta">
-            {{ with .Params.Authors }}
+            {{ with .Params.authors }}
             <span class="card__authors">
                 {{ $authors := . }}
                 {{ $count := len $authors }}

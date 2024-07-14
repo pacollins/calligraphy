@@ -25,6 +25,58 @@ enableEmoji = true
   faviconMSColor = "#00aba9"
   faviconiOSColor = "#00aba9"
 
+[params.style]
+    ## Width ##
+    width_site = ""
+    width_content = ""
+    width-content-min = ""
+
+    ## Type ##
+    color_red = "blue"
+    font_header = "'Playfair Display', serif"
+    font_body = "'Source Sans 3', sans-serif"
+
+    ## Transitions ##
+    transition_base = "0.3s ease-in-out"
+
+    ## Borders ##
+    border_radius-small = "5px"
+    border_radius-large = "10px"
+
+    ## Global Colors ##
+    color_secondary = "blue"
+    color_button = "green"
+    color_text_light = "hsl(0, 0%, 91%)"
+    color_text_dark = "hsl(0, 0%, 15%)"
+
+    ## Light Mode Colors ##
+    color_primary = "hsl(180, 100%, 35%)"
+    color_primary_tint = "hsl(174, 60%, 85%)"
+    color_primary_shade = "hsl(180, 100%, 15%)"
+    color_canvas = "hsl(0, 0%, 93%)"
+    color_canvas_tint = "hsl(0, 0%, 98%)"
+    color_canvas_shade = "hsl(217, 15%, 17%)"
+    color_text = "hsl(0, 0%, 15%)"
+    color_text_muted = "hsl(0, 0%, 45%)"
+    color_text_inverted = "hsl(0, 0%, 91%)"
+    color_text_link = "hsl(174, 60%, 42%)"
+    color_ui_float = "hsl(0, 0%, 86%)"
+    border_color = "hsl(220, 16%, 36%)"
+    image_filter = "none"
+
+    ## Dark Mode Colors ##
+    dark_color_primary = "hsl(180, 100%, 35%)"
+    dark_color_canvas = "hsl(219, 16%, 17%)"
+    dark_color_canvas-tint = "hsl(218, 17%, 26%)"
+    dark_color_canvas_shade = "hsl(218, 18%, 9%)"
+    dark_color_text = "hsl(0, 0%, 91%)"
+    dark_color_text_muted = "hsl(0, 0%, 77%)"
+    dark_color_text_inverted = "hsl(0, 0%, 15%)"
+    dark_color_text_link = "hsl(174, 60%, 55%)"
+    dark_color_ui_float = "hsl(220, 16%, 33%)"
+    dark_border_color = "hsl(219, 28%, 88%)"
+    dark_image_filter = "grayscale(35%)"
+
 [[menu.main]]
   identifier = "home"
   name = "Home"

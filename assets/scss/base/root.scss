@@ -1,52 +1,52 @@
-@use "hugo:vars" as *;
+@use "hugo:vars" as h;
 
 :root {
     /* Type */
-    --font-header: "Playfair Display", serif;
-    --font-body: "Source Sans Pro", sans-serif;
+    --font-header: #{h.$font_header};
+    --font-body: #{h.$font_body};
 
     /* Transitions */
-    --transition-base: 0.3s ease-in-out;
+    --transition-base: #{h.$transition_base};
 
     /* Borders */
-    --border-radius-small: 5px;
-    --border-radius-large: 10px;
+    --border-radius-small: #{h.$border_radius-small};
+    --border-radius-large: #{h.$border_radius-large};
 
     /* Global Colors */
-    --color-primary: hsl(180, 100%, 35%);
-    --color-primary-tint: hsl(174, 60%, 85%);
-    --color-primary-shade: hsl(180, 100%, 15%);
-    --color-secondary: blue;
-    --color-button: green;
-    --color-text-light: hsl(0, 0%, 91%);
-    --color-text-dark: hsl(0, 0%, 15%);
+    --color-secondary: #{h.$color_secondary};
+    --color-button: #{h.$color_button};
+    --color-text-light: #{h.$color_text_light};
+    --color-text-dark: #{h.$color_text_dark};
 
     /* Light Colors */
-    --color-canvas: hsl(0, 0%, 93%);
-    --color-canvas-tint: hsl(0, 0%, 98%);
-    --color-canvas-shade: hsl(217, 15%, 17%);
-    --color-text: hsl(0, 0%, 15%);
-    --color-text-muted: hsl(0, 0%, 45%);
-    --color-text-inverted: hsl(0, 0%, 91%);
-    --color-text-link: hsl(174, 60%, 42%);
-    --color-ui-float: hsl(0, 0%, 86%);
-    --border-color: hsl(220, 16%, 36%);
-    --image-filter: none;
+    --color-primary: #{h.$color_primary};
+    --color-primary-tint: #{h.$color_primary_tint};
+    --color-primary-shade: #{h.$color_primary_shade};
+    --color-canvas: #{h.$color_canvas};
+    --color-canvas-tint: #{h.$color_canvas_tint};
+    --color-canvas-shade: #{h.$color_canvas_shade};
+    --color-text: #{h.$color_text};
+    --color-text-muted: #{h.$color_text_muted};
+    --color-text-inverted: #{h.$color_text_inverted};
+    --color-text-link: #{h.$color_text_link};
+    --color-ui-float: #{h.$color_ui_float};
+    --border-color: #{h.$border_color};
+    --image-filter: #{h.$image_filter};
 }
 
 [data-dark-mode="on"] {
     /* Dark Colors */
-    --color-primary: hsl(180, 100%, 35%);
-    --color-canvas: hsl(219, 16%, 17%);
-    --color-canvas-tint: hsl(218, 17%, 26%);
-    --color-canvas-shade: hsl(218, 18%, 9%);
-    --color-text: hsl(0, 0%, 91%);
-    --color-text-muted: hsl(0, 0%, 77%);
-    --color-text-inverted: hsl(0, 0%, 15%);
-    --color-text-link: hsl(174, 60%, 55%);
-    --color-ui-float: hsl(220, 16%, 33%);
-    --border-color: hsl(219, 28%, 88%);
-    --image-filter: grayscale(35%);
+    --color-primary: #{h.$dark_color_primary};
+    --color-canvas: #{h.$dark_color_canvas};
+    --color-canvas-tint: #{h.$dark_color_canvas-tint};
+    --color-canvas-shade: #{h.$dark_color_canvas_shade};
+    --color-text: #{h.$dark_color_text};
+    --color-text-muted: #{h.$dark_color_text_muted};
+    --color-text-inverted: #{h.$dark_color_text_inverted};
+    --color-text-link: #{h.$dark_color_text_link};
+    --color-ui-float: #{h.$dark_color_ui_float};
+    --border-color: #{h.$dark_border_color};
+    --image-filter: #{h.$dark_image_filter};
 }
 
 [data-animations="off"] * {
