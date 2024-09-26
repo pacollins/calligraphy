@@ -120,17 +120,17 @@ This is [`code`](#text-level-semantics) text as a link.
 
 This is [link](#text-level-semantics) text.
 
-This is <mark>marked</mark> text.
+This is ==marked== text.
 
 This is <small>small</small> text.
 
-This is <del>deleted</del> text.
+This is ~~deleted~~ text.
 
-This is <ins>inserted</ins> text.
+This is ++inserted++ text.
 
-This is <sub>sub</sub>script text.
+This is ~sub~script text.
 
-This is <sup>super</sup>script text.
+This is ^super^script text.
 
 This is <abbr title="abbreviated">abbr</abbr> text.
 
@@ -151,17 +151,17 @@ This is [`code`](#text-level-semantics) text as a link.
 
 This is [link](#text-level-semantics) text.
 
-This is <mark>marked</mark> text.
+This is ==marked== text.
 
 This is <small>small</small> text.
 
-This is <del>deleted</del> text.
+This is ~~deleted~~ text.
 
-This is <ins>inserted</ins> text.
+This is ++inserted++ text.
 
-This is <sub>sub</sub>script text.
+This is ~sub~script text.
 
-This is <sup>super</sup>script text.
+This is ^super^script text.
 
 This is <abbr title="abbreviated">abbr</abbr> text.
 

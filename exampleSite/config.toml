@@ -119,6 +119,24 @@ enableEmoji = true
 [markup.goldmark.parser.attribute]
   block = true
 
+[markup.goldmark.extensions]
+    strikethrough = true
+
+[markup.goldmark.extensions.extras.delete]
+    enable = true
+          
+[markup.goldmark.extensions.extras.insert]
+    enable = true
+
+[markup.goldmark.extensions.extras.mark]
+    enable = true
+
+[markup.goldmark.extensions.extras.subscript]
+    enable = true
+
+[markup.goldmark.extensions.extras.superscript]
+    enable = true
+
 [module.hugoVersion]
   extended = true
   min = "0.111.3"
