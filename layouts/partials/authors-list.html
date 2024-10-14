@@ -1,0 +1,11 @@
+{{ $authors := . }}
+{{ $count := len $authors }}
+
+<span class="card__authors">
+  {{ range $index, $author := $authors }}
+    {{ $authorPage := site.GetPage "taxonomyTerm" (printf "authors/%s" $author | urlize) }}
+    <a href="{{ $authorPage.RelPermalink }}">{{ $authorPage.Title }}</a>
+    {{- if lt $index (sub $count 2) }}, {{ end -}}
+    {{ if eq $index (sub $count 2) }} {{ T "and" }} {{ end }}
+  {{ end }}
+</span>

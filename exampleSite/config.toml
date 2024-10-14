@@ -1,5 +1,6 @@
 baseURL = "https://hugo-calligraphy.netlify.app/"
 title = "Calligraphy"
+theme = "calligraphy"
 copyright = "Copyright © 2021"
 paginate = 6
 languageCode = "en"

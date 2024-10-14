@@ -16,23 +16,8 @@
                     {{ with .Params.series }}<a href="/series/{{ . | urlize }}" class="card__series" data-taxonomy="{{ print "series-" . | urlize }}">{{ . }}</a>{{ end }}
                     <h2 class="card__title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
                     {{ with .Params.subtitle }} <span class="card__subtitle">{{ . }}</span>{{ end }}
-                    {{ with .Params.authors }}
                     <div class="card__meta">
-                        <span class="card__authors">
-                            {{ $authors := . }}
-                            {{ $count := len $authors }}
-                            {{ if eq $count 1 }}
-                                {{ index $authors 0 }}
-                            {{ else if eq $count 2 }}
-                                {{ index $authors 0 }} and {{ index $authors 1 }}
-                            {{ else }}
-                                {{ range $index, $author := $authors }}
-                                    {{ if gt $index 0 }}, {{ end }}{{ $author }}
-                                    {{ if eq $index (sub $count 1) }} and {{ end }}
-                                {{ end }}
-                            {{ end }}
-                        </span>
-                        {{ end }}
+                        {{ partial "authors-list.html" .Params.authors }}
                         {{ with .PublishDate }}<time datetime="{{ . }}" class="card__date">{{ cond (eq (.Format "2006") (now.Format "2006")) (.Format "Jan 2") (.Format "2 Jan 2006") }}</time>{{ end }}
                     </div>
                 </div>
